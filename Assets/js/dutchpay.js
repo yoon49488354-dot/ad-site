@@ -13,6 +13,7 @@
   const individualTotalInput = document.querySelector("#individual-total");
   const individualTotalError = document.querySelector("#individual-total-error");
   const individualRemaining = document.querySelector("#individual-remaining");
+  const individualRemainingSplit = document.querySelector("#individual-remaining-split");
   const participantChart = document.querySelector("#participant-chart");
   const participantList = document.querySelector("#participant-list");
   const individualError = document.querySelector("#individual-error");
@@ -206,15 +207,41 @@
     if (budgetText && budget === null) {
       individualTotalInput.setAttribute("aria-invalid", "true");
       individualTotalError.textContent = "총 금액은 0 이상의 원 단위 숫자로 입력해주세요.";
+      if (individualRemainingSplit) {
+        individualRemainingSplit.textContent = "";
+      }
     } else if (invalidAmountInput) {
       individualError.textContent = "참여자별 금액은 0 이상의 원 단위 숫자로 입력해주세요.";
+      if (individualRemainingSplit) {
+        individualRemainingSplit.textContent = "";
+      }
     } else if (budget === null) {
       individualRemaining.textContent = "총 금액을 입력해주세요.";
+      if (individualRemainingSplit) {
+        individualRemainingSplit.textContent = "";
+      }
     } else {
       const remaining = budget - allocated;
       individualRemaining.textContent = remaining < 0
         ? `${formatMoney(Math.abs(remaining))} 초과`
         : formatMoney(remaining);
+
+      if (individualRemainingSplit) {
+        const participantCount = participants.length;
+        if (remaining < 0 || participantCount === 0) {
+          individualRemainingSplit.textContent = "";
+        } else if (remaining === 0) {
+          individualRemainingSplit.textContent = `1인당 0원 (참여자 ${participantCount}명)`;
+        } else {
+          const perPerson = Math.floor(remaining / participantCount);
+          const remainder = remaining % participantCount;
+          if (remainder === 0) {
+            individualRemainingSplit.textContent = `1인당 ${formatMoney(perPerson)} (참여자 ${participantCount}명)`;
+          } else {
+            individualRemainingSplit.textContent = `1인당 ${formatMoney(perPerson)} (참여자 ${participantCount}명, 나머지 ${formatMoney(remainder)})`;
+          }
+        }
+      }
     }
 
     participantChart.replaceChildren();

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Assets/css/normalize.css">
     <link rel="stylesheet" href="Assets/css/Reset.css">
     <link rel="stylesheet" href="Assets/css/Commons.css">
-    <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="Assets/css/style.css?v=3">
   </head>
   <body class="dutchpay-page">
     <div data-shared-component="header"></div>
@@ -85,8 +85,13 @@
             </div>
             <div class="dutchpay-individual-summary">
               <section class="dutchpay-remaining" aria-live="polite" aria-label="남은 금액">
-                <span>남은 금액</span>
-                <strong id="individual-remaining">총 금액을 입력해주세요.</strong>
+                <div class="dutchpay-remaining__row">
+                  <span class="dutchpay-remaining__label">남은 금액</span>
+                  <div class="dutchpay-remaining__values">
+                    <strong id="individual-remaining">총 금액을 입력해주세요.</strong>
+                    <p class="dutchpay-remaining__split" id="individual-remaining-split"></p>
+                  </div>
+                </div>
               </section>
               <div class="dutchpay-chart" id="participant-chart" aria-label="참여자별 부담 비율 그래프"></div>
             </div>
@@ -97,6 +102,6 @@
     </main>
     <div data-shared-component="footer"></div>
     <script src="Assets/js/components.js"></script>
-    <script src="Assets/js/dutchpay.js"></script>
+    <script src="Assets/js/dutchpay.js?v=3"></script>
   </body>
 </html>

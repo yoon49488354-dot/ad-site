@@ -2328,10 +2328,7 @@
 }
 
 .dutchpay-remaining {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  display: block;
   margin-bottom: 18px;
   padding: 18px 20px;
   border: 1px solid #dfe5ef;
@@ -2339,10 +2336,28 @@
   background: #f7f8fc;
 }
 
-.dutchpay-remaining span {
+.dutchpay-remaining__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.dutchpay-remaining .dutchpay-remaining__label {
   color: #53627c;
   font-size: 14px;
   font-weight: 650;
+  flex-shrink: 0;
+}
+
+.dutchpay-remaining__values {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+  min-width: 0;
 }
 
 .dutchpay-remaining strong {
@@ -2352,6 +2367,19 @@
   letter-spacing: -0.04em;
   text-align: right;
   overflow-wrap: anywhere;
+}
+
+.dutchpay-remaining__split {
+  margin: 0;
+  color: #5b6b85;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+.dutchpay-remaining__split:empty {
+  display: none;
 }
 
 .dutchpay-chart {
@@ -2554,6 +2582,10 @@
 
   .dutchpay-remaining strong {
     font-size: 20px;
+  }
+
+  .dutchpay-remaining__split {
+    font-size: 12px;
   }
 
   .dutchpay-chart {
