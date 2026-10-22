@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="세전 연봉과 세전 월급을 서로 환산하고, 아르바이트 급여를 계산해보세요."
+    >
+    <title>아르바이트 시급 계산기</title>
+    <link rel="stylesheet" href="Assets/css/normalize.css">
+    <link rel="stylesheet" href="Assets/css/Reset.css">
+    <link rel="stylesheet" href="Assets/css/Commons.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+  </head>
+  <body>
+    <div data-shared-component="header"></div>
+
+    <main class="container page-main">
+      <section class="intro" aria-labelledby="page-title">
+        <span class="eyebrow">PART-TIME PAY</span>
+        <h1 id="page-title">아르바이트 <span>급여 계산기</span></h1>
+        <p>근무 일정에 따른 기본급, 야간수당과 예상 실수령액을 계산해보세요.</p>
+      </section>
+
+      <section class="calculator alba-calculator" id="alba-panel" aria-label="아르바이트 시급 계산기">
+        <form class="calculator__form alba-form" id="alba-form" novalidate>
+          <div class="section-heading">
+            <span class="section-heading__number">01</span>
+            <div>
+              <h2>아르바이트 급여 입력</h2>
+              <p>근무 일정에 맞춰 예상 급여를 계산합니다.</p>
+            </div>
+          </div>
+
+          <div class="alba-section">
+            <div class="alba-field">
+              <label for="hourly-wage">시급</label>
+              <div class="amount-field__control">
+                <input id="hourly-wage" name="hourly-wage" type="text" inputmode="numeric" autocomplete="off" placeholder="예: 12,000" aria-describedby="wage-error" required>
+                <span aria-hidden="true">원</span>
+              </div>
+              <p class="form-error" id="wage-error" role="alert"></p>
+            </div>
+
+            <fieldset class="alba-field">
+              <legend>사업장 규모</legend>
+              <div class="choice-list choice-list--stack">
+                <label><input type="radio" name="workplace-size" value="large" checked><span>상시근로자 5인 이상</span></label>
+                <label><input type="radio" name="workplace-size" value="small"><span>상시근로자 5인 미만</span></label>
+                <label><input type="radio" name="workplace-size" value="unknown"><span>모름</span></label>
+              </div>
+              <label class="inline-check small-business-option" id="small-business-option" hidden>
+                <input type="checkbox" id="agreed-night-pay">
+                <span>사업장 약정에 따라 야간 가산수당 별도 적용</span>
+              </label>
+              <p class="field-hint" id="workplace-hint"></p>
+            </fieldset>
+          </div>
+
+          <div class="alba-section">
+            <fieldset class="alba-field">
+              <legend>근무 기간</legend>
+              <label for="shift-count">총 근무 횟수</label>
+              <div class="compact-input shift-count-input">
+                <input id="shift-count" name="shift-count" type="number" min="1" max="90" step="1" value="1" required>
+                <span>회</span>
+              </div>
+              <div class="date-range date-range--single">
+                <div>
+                  <label for="period-start">계산 시작일</label>
+                  <input id="period-start" type="date" required>
+                </div>
+              </div>
+              <p class="field-hint" id="period-hint">선택한 근무 요일이 반복된다고 보고, 계산 시작일부터 입력한 횟수만큼 계산합니다. 최대 90회까지 입력할 수 있습니다.</p>
+              <p class="form-error" id="period-error" role="alert"></p>
+            </fieldset>
+
+            <fieldset class="alba-field">
+              <legend>근무 요일 <span class="legend-note">복수 선택 가능</span></legend>
+              <div class="weekday-options" id="weekday-options"></div>
+              <p class="form-error" id="weekday-error" role="alert"></p>
+              <div class="weekday-schedules" id="weekday-schedules"></div>
+            </fieldset>
+          </div>
+
+          <div class="alba-section">
+            <fieldset class="alba-field">
+              <legend>주휴수당 조건</legend>
+              <p class="field-hint field-hint--top">법정 지급 여부를 확정하는 진단이 아닌 참고용 예상입니다.</p>
+              <div class="condition-field">
+                <span>입력 일정이 계약상 소정근로 일정과 같나요?</span>
+                <div class="choice-list">
+                  <label><input type="radio" name="schedule-contract-match" value="yes" checked><span>예</span></label>
+                  <label><input type="radio" name="schedule-contract-match" value="no"><span>아니요</span></label>
+                  <label><input type="radio" name="schedule-contract-match" value="unknown"><span>확인 필요</span></label>
+                </div>
+                <div class="contract-hours" id="contract-hours-wrap" hidden>
+                  <label for="contract-hours">계약상 주 소정근로시간</label>
+                  <div class="compact-input"><input id="contract-hours" type="number" min="0.01" max="168" step="0.01" placeholder="예: 16"><span>시간</span></div>
+                  <p class="form-error" id="contract-hours-error" role="alert"></p>
+                </div>
+              </div>
+              <div class="condition-field">
+                <span>해당 기간의 소정근로일을 모두 개근했나요?</span>
+                <div class="choice-list">
+                  <label><input type="radio" name="attendance" value="yes"><span>예</span></label>
+                  <label><input type="radio" name="attendance" value="no"><span>아니요</span></label>
+                  <label><input type="radio" name="attendance" value="unknown" checked><span>확인 필요</span></label>
+                </div>
+              </div>
+              <div class="condition-field">
+                <span>해당 주의 근로관계가 유지되었나요?</span>
+                <div class="choice-list">
+                  <label><input type="radio" name="employment-maintained" value="yes"><span>예</span></label>
+                  <label><input type="radio" name="employment-maintained" value="no"><span>아니요</span></label>
+                  <label><input type="radio" name="employment-maintained" value="unknown" checked><span>확인 필요</span></label>
+                </div>
+              </div>
+              <div class="condition-field condition-field--last">
+                <span>주휴수당 포함 시급인가요?</span>
+                <div class="choice-list">
+                  <label><input type="radio" name="holiday-included" value="no"><span>아니요</span></label>
+                  <label><input type="radio" name="holiday-included" value="yes"><span>예</span></label>
+                  <label><input type="radio" name="holiday-included" value="unknown" checked><span>확인 필요</span></label>
+                </div>
+              </div>
+              <p class="field-hint">일정이 계약 내용과 다르거나 시급에 주휴수당이 포함된 경우 자동 산정이 달라질 수 있습니다.</p>
+            </fieldset>
+
+            <fieldset class="alba-field">
+              <legend>공제 방식</legend>
+              <div class="choice-list choice-list--stack">
+                <label><input type="radio" name="deduction-type" value="none" checked><span>공제 없음</span></label>
+                <label><input type="radio" name="deduction-type" value="3.3"><span>3.3% 단순 공제</span></label>
+              </div>
+              <p class="field-hint">3.3%는 단순 추정 옵션이며 근로소득세·4대 보험·실제 원천징수를 확정하지 않습니다.</p>
+            </fieldset>
+          </div>
+
+          <button class="button button--primary calculate-button" type="submit">
+            급여 계산하기
+            <span aria-hidden="true">→</span>
+          </button>
+          <p class="form-error alba-form-error" id="alba-form-error" role="alert"></p>
+        </form>
+
+        <section class="calculator__result alba-result" aria-labelledby="alba-result-title" aria-live="polite">
+          <div class="section-heading section-heading--result">
+            <span class="section-heading__number">02</span>
+            <div>
+              <h2 id="alba-result-title">아르바이트 급여 결과</h2>
+              <p id="alba-result-summary">근무 조건을 입력하고 계산해보세요.</p>
+            </div>
+          </div>
+          <p class="stale-message" id="stale-message" role="status" hidden>입력값이 변경되었습니다. 다시 계산해주세요.</p>
+          <div class="alba-results-card" id="alba-results-card">
+            <dl class="result-list">
+              <div><dt>적용 시급</dt><dd id="out-wage">—</dd></div>
+              <div><dt>근무 기간</dt><dd id="out-period">—</dd></div>
+              <div><dt>총 근무 횟수</dt><dd id="out-days">—</dd></div>
+              <div><dt>총 실제 근무시간</dt><dd id="out-hours">—</dd></div>
+              <div><dt>총 야간근로시간</dt><dd id="out-night-hours">—</dd></div>
+              <div><dt>기본 급여</dt><dd id="out-base-pay">—</dd></div>
+              <div><dt>야간 가산수당</dt><dd id="out-night-pay">—</dd></div>
+              <div><dt>주휴수당</dt><dd id="out-holiday-pay">—</dd></div>
+              <div><dt>세전 총급여</dt><dd id="out-gross">—</dd></div>
+              <div><dt>공제 방식</dt><dd id="out-deduction-type">—</dd></div>
+              <div><dt>공제액</dt><dd id="out-deduction">—</dd></div>
+            </dl>
+            <div class="take-home alba-take-home">
+              <span>예상 실수령액</span>
+              <strong id="out-net">계산 대기</strong>
+            </div>
+            <p class="result-empty alba-empty" id="alba-empty">계산 결과가 여기에 표시됩니다.</p>
+          </div>
+          <div class="result-notices" id="result-notices" aria-live="polite"></div>
+          <section class="daily-breakdown" aria-labelledby="breakdown-title">
+            <h3 id="breakdown-title">근무일별 급여 내역</h3>
+            <div id="daily-breakdown-content" class="daily-breakdown__content">
+              <p>계산 후 날짜별 상세 내역을 확인할 수 있습니다.</p>
+            </div>
+          </section>
+          <div class="legal-notes">
+            <p>야간근로는 22:00~다음 날 06:00 중 실제 근로한 시간만 계산합니다. 연장·휴일근로 가산수당은 포함하지 않습니다.</p>
+            <p>휴게시간의 법정 기준 충족 여부는 별도로 확인이 필요합니다. 주휴수당은 입력한 계약·출근 조건에 따른 추정치이며 지급 대상을 확정하지 않습니다.</p>
+            <p>금액은 원 단위에서 가장 가까운 정수로 반올림합니다.</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div data-shared-component="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="Assets/js/components.js"></script>
+    <script src="Assets/js/main.js"></script>
+  </body>
+</html>

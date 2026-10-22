@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="세전 연봉을 세전 월급으로, 세전 월급을 세전 연봉으로 환산합니다.">
+    <title>세전 연봉·월급 계산기</title>
+    <link rel="stylesheet" href="Assets/css/normalize.css">
+    <link rel="stylesheet" href="Assets/css/Reset.css">
+    <link rel="stylesheet" href="Assets/css/Commons.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+  </head>
+  <body>
+    <div data-shared-component="header"></div>
+    <main class="container page-main">
+      <section class="intro" aria-labelledby="page-title">
+        <span class="eyebrow">SALARY CALCULATOR</span>
+        <h1 id="page-title">세전 <span>연봉·월급</span>을<br class="desktop-break"> 간편하게 환산해보세요</h1>
+        <p>세전 연봉을 월급으로, 세전 월급을 연봉으로 바꿔볼 수 있어요.</p>
+      </section>
+      <section class="calculator" aria-label="세전 연봉·월급 계산기">
+        <form class="calculator__form salary-calculator-form" id="salary-form" novalidate>
+          <div class="section-heading">
+            <span class="section-heading__number">01</span>
+            <div>
+              <h2>월급·연봉 환산</h2>
+              <p>계산 방향과 급여 금액을 입력해주세요.</p>
+            </div>
+          </div>
+          <fieldset class="salary-calc-modes">
+            <legend>계산 방식</legend>
+            <label><input type="radio" name="salary-calc-mode" value="gross-annual" checked><span>세전 연봉 → 세전 월급</span></label>
+            <label><input type="radio" name="salary-calc-mode" value="gross-monthly"><span>세전 월급 → 세전 연봉</span></label>
+          </fieldset>
+          <div class="amount-field salary-amount-field">
+            <label for="salary-amount" id="salary-amount-label">세전 연봉</label>
+            <div class="amount-field__control">
+              <input id="salary-amount" type="text" inputmode="numeric" autocomplete="off" placeholder="세전 연봉 입력" aria-describedby="amount-hint form-error" required>
+              <span aria-hidden="true">원</span>
+            </div>
+            <p class="field-hint" id="amount-hint">세전 연봉을 월 기준으로 환산합니다.</p>
+            <p class="form-error" id="form-error" role="alert"></p>
+          </div>
+          <button class="button button--primary calculate-button" type="submit">계산하기 <span aria-hidden="true">→</span></button>
+        </form>
+        <section class="calculator__result salary-calculator-result" aria-labelledby="result-title" aria-live="polite">
+          <div class="section-heading section-heading--result">
+            <span class="section-heading__number">02</span>
+            <div>
+              <h2 id="result-title">환산 결과</h2>
+              <p id="result-summary">계산 방식을 선택하고 급여 금액을 입력해주세요.</p>
+            </div>
+          </div>
+          <div class="salary-result-card" id="salary-result-card">
+            <p class="salary-result-label" id="salary-result-label">환산 세전 월급</p>
+            <strong id="salary-result-value">—</strong>
+            <p class="salary-result-secondary" id="salary-result-secondary">세전 연봉 ÷ 12 (원 단위 반올림)</p>
+          </div>
+          <p class="calculation-note salary-calculation-note">연봉을 12로 나눈 값은 원 단위에서 반올림합니다. 이 계산기는 세전 금액만 환산합니다.</p>
+        </section>
+      </section>
+    </main>
+    <div data-shared-component="footer"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="Assets/js/components.js"></script>
+    <script src="Assets/js/main.js"></script>
+  </body>
+</html>

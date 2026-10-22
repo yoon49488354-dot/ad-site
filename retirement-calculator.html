@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="입사일, 퇴사일과 퇴직 전 임금으로 퇴직금을 예상 계산해보세요.">
+    <title>퇴직금 계산기</title>
+    <link rel="stylesheet" href="Assets/css/normalize.css">
+    <link rel="stylesheet" href="Assets/css/Reset.css">
+    <link rel="stylesheet" href="Assets/css/Commons.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+  </head>
+  <body>
+    <div data-shared-component="header"></div>
+    <main class="container page-main">
+      <section class="intro" aria-labelledby="page-title">
+        <span class="eyebrow">RETIREMENT PAY CALCULATOR</span>
+        <h1 id="page-title">예상 <span>퇴직금</span>을<br class="desktop-break"> 계산해보세요</h1>
+        <p>근속기간과 퇴직 전 임금 정보를 기준으로 세전 퇴직금을 추정합니다.</p>
+      </section>
+
+      <section class="calculator retirement-calculator" aria-label="퇴직금 계산기">
+        <form class="calculator__form retirement-form" id="retirement-form" novalidate>
+          <div class="section-heading">
+            <span class="section-heading__number">01</span>
+            <div>
+              <h2>근무 및 임금 정보</h2>
+              <p>퇴직 전 임금과 근무 기간을 입력해주세요.</p>
+            </div>
+          </div>
+
+          <div class="retirement-field">
+            <label for="employment-start">입사일</label>
+            <input id="employment-start" type="date" required>
+            <p class="form-error" id="employment-start-error" role="alert"></p>
+          </div>
+          <div class="retirement-field">
+            <label for="employment-end">퇴사일 (마지막 근무일)</label>
+            <input id="employment-end" type="date" required>
+            <p class="form-error" id="employment-end-error" role="alert"></p>
+          </div>
+          <div class="retirement-field">
+            <label for="weekly-hours">주 소정근로시간</label>
+            <div class="retirement-input-with-unit">
+              <input id="weekly-hours" type="number" min="0" max="168" step="0.01" value="40" required>
+              <span>시간</span>
+            </div>
+            <p class="field-hint">주 평균 소정근로시간이 15시간 미만이면 퇴직급여 대상에서 제외될 수 있습니다.</p>
+            <p class="form-error" id="weekly-hours-error" role="alert"></p>
+          </div>
+
+          <fieldset class="retirement-field retirement-wages">
+            <legend>퇴직 전 3개월 임금</legend>
+            <p class="field-hint">아래 각 기간에 해당하는 세전 임금 합계를 입력해주세요.</p>
+            <label>
+              <span id="wage-period-1-label">첫 번째 기간</span>
+              <span class="retirement-input-with-unit"><input class="three-month-wage" id="three-month-wage-1" type="text" inputmode="numeric" value="0"><span>원</span></span>
+            </label>
+            <label>
+              <span id="wage-period-2-label">두 번째 기간</span>
+              <span class="retirement-input-with-unit"><input class="three-month-wage" id="three-month-wage-2" type="text" inputmode="numeric" value="0"><span>원</span></span>
+            </label>
+            <label>
+              <span id="wage-period-3-label">세 번째 기간</span>
+              <span class="retirement-input-with-unit"><input class="three-month-wage" id="three-month-wage-3" type="text" inputmode="numeric" value="0"><span>원</span></span>
+            </label>
+            <p class="form-error" id="three-month-wage-error" role="alert"></p>
+          </fieldset>
+
+          <div class="retirement-field">
+            <label for="annual-bonus">퇴직 전 1년간 지급된 상여금 합계</label>
+            <div class="retirement-input-with-unit">
+              <input id="annual-bonus" type="text" inputmode="numeric" value="0">
+              <span>원</span>
+            </div>
+            <p class="field-hint">평균임금 산정에 포함될 수 있는 금액을 입력하세요.</p>
+            <p class="form-error" id="annual-bonus-error" role="alert"></p>
+          </div>
+          <div class="retirement-field">
+            <label for="annual-leave-pay">퇴직 전 1년간 지급된 연차수당 합계</label>
+            <div class="retirement-input-with-unit">
+              <input id="annual-leave-pay" type="text" inputmode="numeric" value="0">
+              <span>원</span>
+            </div>
+            <p class="field-hint">평균임금 산정에 포함되는 미사용 연차수당 등 해당 금액을 입력하세요.</p>
+            <p class="form-error" id="annual-leave-error" role="alert"></p>
+          </div>
+
+          <button class="button button--primary calculate-button" type="submit">퇴직금 계산하기 <span aria-hidden="true">→</span></button>
+        </form>
+
+        <section class="calculator__result retirement-result" aria-labelledby="retirement-result-title" aria-live="polite">
+          <div class="section-heading section-heading--result">
+            <span class="section-heading__number">02</span>
+            <div>
+              <h2 id="retirement-result-title">퇴직금 예상 결과</h2>
+              <p id="retirement-result-summary">근무 기간과 임금 정보를 입력해주세요.</p>
+            </div>
+          </div>
+          <div class="retirement-result-card" id="retirement-result-card">
+            <p>예상 퇴직금 (세전)</p>
+            <strong id="retirement-amount">—</strong>
+            <dl>
+              <div><dt>근속기간</dt><dd id="retirement-service">—</dd></div>
+              <div><dt>평균임금 산정기간</dt><dd id="retirement-average-period">—</dd></div>
+              <div><dt>산정 대상 임금 합계</dt><dd id="retirement-wage-total">—</dd></div>
+              <div><dt>1일 평균임금</dt><dd id="retirement-daily-average">—</dd></div>
+              <div><dt>퇴직급여 대상 여부</dt><dd id="retirement-eligibility">—</dd></div>
+            </dl>
+          </div>
+          <div class="result-notices" id="retirement-notices"></div>
+          <p class="calculation-note retirement-disclaimer">
+            예상 퇴직금 = 1일 평균임금 × 30일 × 계속근로일수 ÷ 365일. 평균임금이 통상임금보다 낮은 경우 통상임금 기준 비교가 필요합니다. 세금, 휴직·수습기간 등 개별 사정은 자동 반영하지 않으므로 실제 금액은 달라질 수 있습니다.
+          </p>
+        </section>
+      </section>
+    </main>
+    <div data-shared-component="footer"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="Assets/js/components.js"></script>
+    <script src="Assets/js/main.js"></script>
+  </body>
+</html>

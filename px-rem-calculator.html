@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="기본 글자 크기 16px 기준으로 px와 rem 값을 양방향으로 변환합니다.">
+    <title>PX·REM 변환기</title>
+    <link rel="stylesheet" href="Assets/css/normalize.css">
+    <link rel="stylesheet" href="Assets/css/Reset.css">
+    <link rel="stylesheet" href="Assets/css/Commons.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+  </head>
+  <body class="unit-converter-page">
+    <div data-shared-component="header"></div>
+    <main class="container page-main">
+      <section class="intro" aria-labelledby="page-title">
+        <span class="eyebrow">PX TO REM CONVERTER</span>
+        <h1 id="page-title"><span>PX to REM</span> 변환기</h1>
+        <p>픽셀(px)과 rem 값을 입력 즉시 양방향으로 변환합니다.</p>
+      </section>
+      <section class="unit-converter" aria-label="PX와 REM 변환기">
+        <div class="unit-converter__fields">
+          <div class="unit-converter__field">
+            <label for="px-value">Pixels</label>
+            <div class="unit-converter__input">
+              <button class="unit-converter__copy" type="button" data-copy-target="px-value" aria-label="픽셀 값 복사" title="복사">
+                <span aria-hidden="true">▢</span>
+              </button>
+              <input id="px-value" type="text" inputmode="decimal" autocomplete="off" value="16" aria-describedby="px-error">
+              <span class="unit-converter__unit" aria-hidden="true">px</span>
+            </div>
+            <p class="unit-converter__error" id="px-error" role="alert"></p>
+          </div>
+          <span class="unit-converter__arrows" aria-hidden="true">⇄</span>
+          <div class="unit-converter__field unit-converter__field--result">
+            <label for="rem-value">REM</label>
+            <div class="unit-converter__input">
+              <button class="unit-converter__copy" type="button" data-copy-target="rem-value" aria-label="REM 값 복사" title="복사">
+                <span aria-hidden="true">▢</span>
+              </button>
+              <input id="rem-value" type="text" inputmode="decimal" autocomplete="off" value="1" aria-describedby="rem-error">
+              <span class="unit-converter__unit" aria-hidden="true">rem</span>
+            </div>
+            <p class="unit-converter__error" id="rem-error" role="alert"></p>
+          </div>
+        </div>
+        <p class="unit-converter__note"><span aria-hidden="true">ⓘ</span> 기본 폰트 사이즈 16px 기준으로 계산합니다.</p>
+      </section>
+    </main>
+    <div data-shared-component="footer"></div>
+    <script src="Assets/js/components.js"></script>
+    <script src="Assets/js/px-rem.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="바이트부터 요타바이트까지 데이터 용량 단위를 입력 즉시 변환해보세요.">
+    <title>데이터 용량 변환기</title>
+    <link rel="stylesheet" href="Assets/css/normalize.css">
+    <link rel="stylesheet" href="Assets/css/Reset.css">
+    <link rel="stylesheet" href="Assets/css/Commons.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+  </head>
+  <body>
+    <div data-shared-component="header"></div>
+    <main class="container page-main">
+      <section class="intro" aria-labelledby="page-title">
+        <span class="eyebrow">DATA SIZE CONVERTER</span>
+        <h1 id="page-title"><span>데이터 용량</span>을 쉽고 빠르게!</h1>
+        <p>단위를 선택하고 값을 입력하면 환산 결과가 바로 계산됩니다.</p>
+      </section>
+
+      <section class="unit-conversion-card" aria-label="데이터 용량 단위 변환">
+        <div class="unit-conversion-controls">
+          <div class="unit-conversion-input-field">
+            <label for="data-size-value">변환할 데이터 용량</label>
+            <div class="unit-conversion-value">
+              <input id="data-size-value" type="text" inputmode="decimal" autocomplete="off" value="1" aria-describedby="data-size-input-error">
+            </div>
+            <p class="unit-conversion-error" id="data-size-input-error" role="alert"></p>
+          </div>
+          <div class="unit-conversion-select-field unit-conversion-select-field--from">
+            <label for="data-size-from">변환 전 단위</label>
+            <select id="data-size-from"></select>
+          </div>
+          <button class="unit-swap-button" id="data-size-swap" type="button" aria-label="변환 전후 단위 바꾸기" title="단위 바꾸기">⇄</button>
+          <div class="unit-conversion-select-field unit-conversion-select-field--to">
+            <label for="data-size-to">변환 후 단위</label>
+            <select id="data-size-to"></select>
+          </div>
+        </div>
+
+        <section class="unit-conversion-result" aria-live="polite" aria-labelledby="data-size-result-heading">
+          <p id="data-size-result-heading" class="unit-conversion-result__label">변환 결과</p>
+          <strong class="unit-conversion-result__value" id="data-size-result">1,024 KB</strong>
+          <p class="unit-conversion-result__equation" id="data-size-equation">1 MB = 1,024 KB</p>
+        </section>
+      </section>
+
+      <section class="unit-reference-card" aria-labelledby="data-size-table-heading">
+        <div class="unit-section-heading">
+          <span class="section-heading__number">01</span>
+          <div>
+            <h2 id="data-size-table-heading">데이터 용량 단위표</h2>
+            <p>첨부 표의 단위, 기호, 바이트 환산 기준 및 용량 예시입니다.</p>
+          </div>
+        </div>
+        <div class="unit-table-scroll data-size-table-scroll" tabindex="0" aria-label="데이터 용량 단위 및 기준 표">
+          <table class="unit-reference-table data-size-reference-table">
+            <thead>
+              <tr>
+                <th scope="col">단위</th>
+                <th scope="col">기호</th>
+                <th scope="col">바이트 수</th>
+                <th scope="col">예시 용량</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">바이트</th><td>B</td><td>1B = 8bit</td><td>문서의 한 문자</td></tr>
+              <tr><th scope="row">킬로바이트</th><td>KB</td><td>1KB = 1,024B</td><td>텍스트 파일</td></tr>
+              <tr><th scope="row">메가바이트</th><td>MB</td><td>1MB = 1,024KB</td><td>음악 파일</td></tr>
+              <tr><th scope="row">기가바이트</th><td>GB</td><td>1GB = 1,024MB</td><td>영화 파일</td></tr>
+              <tr><th scope="row">테라바이트</th><td>TB</td><td>1TB = 1,024GB</td><td>하드 드라이브</td></tr>
+              <tr><th scope="row">페타바이트</th><td>PB</td><td>1PB = 1,024TB</td><td>대규모 데이터 센터</td></tr>
+              <tr><th scope="row">엑사바이트</th><td>EB</td><td>1EB = 1,024PB</td><td>인터넷 전체 데이터 용량</td></tr>
+              <tr><th scope="row">제타바이트</th><td>ZB</td><td>1ZB = 1,024EB</td><td>전 세계 데이터 저장 용량</td></tr>
+              <tr><th scope="row">요타바이트</th><td>YB</td><td>1YB = 1,024ZB</td><td>미래의 매우 거대한 데이터 용량</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="unit-reference-card unit-formula-card" aria-labelledby="data-size-formula-heading">
+        <div class="unit-section-heading">
+          <span class="section-heading__number">02</span>
+          <div>
+            <h2 id="data-size-formula-heading">단위 변환 방법</h2>
+            <p id="data-size-formula-description"></p>
+          </div>
+        </div>
+        <p class="unit-formula" id="data-size-formula"></p>
+      </section>
+    </main>
+    <div data-shared-component="footer"></div>
+    <script src="Assets/js/components.js"></script>
+    <script src="Assets/js/data-size-converter.js"></script>
+  </body>
+</html>

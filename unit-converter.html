@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="길이, 무게, 섭씨·화씨·켈빈 온도를 입력 즉시 변환해보세요.">
+    <title>단위 변환기</title>
+    <link rel="stylesheet" href="Assets/css/normalize.css">
+    <link rel="stylesheet" href="Assets/css/Reset.css">
+    <link rel="stylesheet" href="Assets/css/Commons.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+  </head>
+  <body class="unit-converter-tool-page">
+    <div data-shared-component="header"></div>
+    <main class="container page-main">
+      <section class="intro" aria-labelledby="page-title">
+        <span class="eyebrow">UNIT CONVERTER</span>
+        <h1 id="page-title"><span>복잡한 단위 변환</span>, 쉽고 빠르게!</h1>
+        <p id="unit-page-description">원하는 단위를 선택하고 값을 입력하면 결과가 바로 계산됩니다.</p>
+      </section>
+
+      <section class="unit-conversion-card" aria-label="단위 변환">
+        <div class="unit-conversion-controls">
+          <div class="unit-conversion-input-field">
+            <label for="unit-value">변환할 값</label>
+            <div class="unit-conversion-value">
+              <input id="unit-value" type="text" inputmode="decimal" autocomplete="off" value="1" aria-describedby="unit-input-error">
+            </div>
+            <p class="unit-conversion-error" id="unit-input-error" role="alert"></p>
+          </div>
+          <div class="unit-conversion-select-field unit-conversion-select-field--from">
+            <label for="unit-from">변환 전 단위</label>
+            <select id="unit-from"></select>
+          </div>
+          <button class="unit-swap-button" id="swap-units" type="button" aria-label="변환 전후 단위 바꾸기" title="단위 바꾸기">⇄</button>
+          <div class="unit-conversion-select-field unit-conversion-select-field--to">
+            <label for="unit-to">변환 후 단위</label>
+            <select id="unit-to"></select>
+          </div>
+        </div>
+
+        <section class="unit-conversion-result" aria-live="polite" aria-labelledby="unit-result-heading">
+          <p id="unit-result-heading" class="unit-conversion-result__label">변환 결과</p>
+          <strong class="unit-conversion-result__value" id="unit-result">결과 계산 중</strong>
+          <p class="unit-conversion-result__equation" id="unit-equation"></p>
+          <button class="button button--primary unit-copy-button" id="copy-conversion" type="button">결과 복사</button>
+          <p class="unit-conversion-error unit-copy-error" id="copy-error" role="status"></p>
+        </section>
+      </section>
+
+      <section class="unit-reference-card" aria-labelledby="unit-table-heading">
+        <div class="unit-section-heading">
+          <span class="section-heading__number">01</span>
+          <div>
+            <h2 id="unit-table-heading">무게 변환표</h2>
+            <p id="unit-table-summary">표에 제시된 기준 단위에 따라 변환한 값입니다.</p>
+          </div>
+        </div>
+        <div class="unit-table-scroll" id="unit-matrix-scroll" tabindex="0" aria-label="무게 단위 변환표">
+          <table class="unit-reference-table unit-reference-table--matrix" id="unit-reference-table">
+            <thead id="unit-table-head"></thead>
+            <tbody id="unit-table-body"></tbody>
+          </table>
+        </div>
+        <div class="unit-table-scroll unit-temperature-table-scroll" id="temperature-table-scroll" hidden>
+          <table class="unit-reference-table unit-temperature-table">
+            <thead>
+              <tr>
+                <th scope="col">구분</th>
+                <th scope="col">섭씨 (°C)</th>
+                <th scope="col">화씨 (°F)</th>
+                <th scope="col">켈빈 (K)</th>
+              </tr>
+            </thead>
+            <tbody id="temperature-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="unit-reference-card unit-formula-card" aria-labelledby="unit-formula-heading">
+        <div class="unit-section-heading">
+          <span class="section-heading__number">02</span>
+          <div>
+            <h2 id="unit-formula-heading">단위 변환 방법</h2>
+            <p id="unit-formula-description"></p>
+          </div>
+        </div>
+        <p class="unit-formula" id="unit-formula"></p>
+      </section>
+    </main>
+    <div data-shared-component="footer"></div>
+    <script src="Assets/js/components.js"></script>
+    <script src="Assets/js/unit-converter.js"></script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="상품 가격과 할인율을 입력해 할인 금액과 최종 결제 금액을 간편하게 계산해보세요.">
+    <title>할인율 계산기</title>
+    <link rel="stylesheet" href="Assets/css/normalize.css">
+    <link rel="stylesheet" href="Assets/css/Reset.css">
+    <link rel="stylesheet" href="Assets/css/Commons.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+  </head>
+  <body class="discount-calculator-page">
+    <div data-shared-component="header"></div>
+    <main class="container page-main">
+      <section class="intro" aria-labelledby="page-title">
+        <span class="eyebrow">DISCOUNT CALCULATOR</span>
+        <h1 id="page-title"><span>할인된 가격</span>, 얼마일까요?</h1>
+        <p>상품 가격과 할인율을 입력하고 최종 결제 금액을 간편하게 확인하세요.</p>
+      </section>
+      <section class="calculator" aria-label="할인율 계산기">
+        <form class="calculator__form salary-calculator-form" id="discount-form" novalidate>
+          <div class="section-heading">
+            <span class="section-heading__number">01</span>
+            <div>
+              <h2>할인 금액 계산</h2>
+              <p>계산 방식과 상품 가격을 입력해주세요.</p>
+            </div>
+          </div>
+          <fieldset class="salary-calc-modes">
+            <legend>계산 방식</legend>
+            <label><input type="radio" name="discount-calc-mode" value="discount-price" checked><span>할인 가격 계산</span></label>
+            <label><input type="radio" name="discount-calc-mode" value="discount-rate"><span>할인율 역산</span></label>
+          </fieldset>
+          <div class="discount-input-group" data-discount-mode="discount-price">
+            <div class="amount-field salary-amount-field">
+              <label for="discount-original-price">상품 원래 가격</label>
+              <div class="amount-field__control">
+                <input id="discount-original-price" type="text" inputmode="decimal" autocomplete="off" placeholder="상품 원래 가격 입력" aria-describedby="discount-original-hint discount-form-error" required>
+                <span aria-hidden="true">원</span>
+              </div>
+              <p class="field-hint" id="discount-original-hint">할인 전 상품 가격을 입력해주세요.</p>
+            </div>
+            <div class="amount-field salary-amount-field">
+              <label for="discount-rate">할인율</label>
+              <div class="amount-field__control">
+                <input id="discount-rate" type="text" inputmode="decimal" autocomplete="off" placeholder="할인율 입력" aria-describedby="discount-rate-hint discount-form-error" required>
+                <span aria-hidden="true">%</span>
+              </div>
+              <p class="field-hint" id="discount-rate-hint">0~100% 사이의 할인율을 입력해주세요.</p>
+            </div>
+          </div>
+          <div class="discount-input-group" data-discount-mode="discount-rate" hidden>
+            <div class="amount-field salary-amount-field">
+              <label for="reverse-original-price">상품 원래 가격</label>
+              <div class="amount-field__control">
+                <input id="reverse-original-price" type="text" inputmode="decimal" autocomplete="off" placeholder="상품 원래 가격 입력" aria-describedby="reverse-original-hint discount-form-error" required>
+                <span aria-hidden="true">원</span>
+              </div>
+              <p class="field-hint" id="reverse-original-hint">할인 전 상품 가격을 입력해주세요.</p>
+            </div>
+            <div class="amount-field salary-amount-field">
+              <label for="discounted-price">할인된 판매 가격</label>
+              <div class="amount-field__control">
+                <input id="discounted-price" type="text" inputmode="decimal" autocomplete="off" placeholder="할인된 판매 가격 입력" aria-describedby="discounted-price-hint discount-form-error" required>
+                <span aria-hidden="true">원</span>
+              </div>
+              <p class="field-hint" id="discounted-price-hint">할인 후 실제 판매 가격을 입력해주세요.</p>
+            </div>
+          </div>
+          <p class="form-error discount-form-error" id="discount-form-error" role="alert"></p>
+          <button class="button button--primary calculate-button" type="submit">계산하기 <span aria-hidden="true">→</span></button>
+        </form>
+        <section class="calculator__result salary-calculator-result" aria-labelledby="discount-result-title" aria-live="polite">
+          <div class="section-heading section-heading--result">
+            <span class="section-heading__number">02</span>
+            <div>
+              <h2 id="discount-result-title">계산 결과</h2>
+              <p id="discount-result-summary">계산 방식을 선택하고 상품 가격을 입력해주세요.</p>
+            </div>
+          </div>
+          <div class="discount-result-card" id="discount-result-card">
+            <p class="discount-result-empty" id="discount-result-empty">계산하기를 누르면 결과를 확인할 수 있습니다.</p>
+            <div id="discount-result-details" hidden></div>
+          </div>
+          <p class="calculation-note discount-calculation-note">할인 금액과 최종 결제 금액은 원 단위로 반올림합니다. 실제 판매 가격과 결제 금액은 상품별 조건에 따라 다를 수 있습니다.</p>
+        </section>
+      </section>
+    </main>
+    <div data-shared-component="footer"></div>
+    <script src="Assets/js/components.js"></script>
+    <script src="Assets/js/discount.js"></script>
+  </body>
+</html>

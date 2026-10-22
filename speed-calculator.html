@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="m/s, km/h, ft/s, mph, in/s, ft/h, 노트, 마하 속도를 입력 즉시 변환해보세요.">
+    <title>속도 변환기</title>
+    <link rel="stylesheet" href="Assets/css/normalize.css">
+    <link rel="stylesheet" href="Assets/css/Reset.css">
+    <link rel="stylesheet" href="Assets/css/Commons.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+  </head>
+  <body>
+    <div data-shared-component="header"></div>
+    <main class="container page-main">
+      <section class="intro" aria-labelledby="page-title">
+        <span class="eyebrow">SPEED CONVERTER</span>
+        <h1 id="page-title"><span>속도 단위</span>를 쉽고 빠르게!</h1>
+        <p>속도와 단위를 선택하면 환산 결과가 바로 계산됩니다.</p>
+      </section>
+
+      <section class="unit-conversion-card" aria-label="속도 단위 변환">
+        <div class="unit-conversion-controls">
+          <div class="unit-conversion-input-field">
+            <label for="speed-value">변환할 속도</label>
+            <div class="unit-conversion-value">
+              <input id="speed-value" type="text" inputmode="decimal" autocomplete="off" value="1" aria-describedby="speed-input-error">
+            </div>
+            <p class="unit-conversion-error" id="speed-input-error" role="alert"></p>
+          </div>
+          <div class="unit-conversion-select-field unit-conversion-select-field--from">
+            <label for="speed-from">변환 전 단위</label>
+            <select id="speed-from"></select>
+          </div>
+          <button class="unit-swap-button" id="speed-swap" type="button" aria-label="변환 전후 단위 바꾸기" title="단위 바꾸기">⇄</button>
+          <div class="unit-conversion-select-field unit-conversion-select-field--to">
+            <label for="speed-to">변환 후 단위</label>
+            <select id="speed-to"></select>
+          </div>
+        </div>
+
+        <section class="unit-conversion-result" aria-live="polite" aria-labelledby="speed-result-heading">
+          <p id="speed-result-heading" class="unit-conversion-result__label">변환 결과</p>
+          <strong class="unit-conversion-result__value" id="speed-result">3.6 km/h</strong>
+          <p class="unit-conversion-result__equation" id="speed-equation">1 m/s = 3.6 km/h</p>
+        </section>
+      </section>
+
+      <section class="unit-reference-card" aria-labelledby="speed-table-heading">
+        <div class="unit-section-heading">
+          <span class="section-heading__number">01</span>
+          <div>
+            <h2 id="speed-table-heading">속도 변환표</h2>
+            <p id="speed-table-summary">행은 변환 전, 열은 변환 후 단위입니다.</p>
+          </div>
+        </div>
+        <div class="unit-table-scroll" tabindex="0" aria-label="속도 단위 변환표">
+          <table class="unit-reference-table unit-reference-table--matrix" id="speed-reference-table">
+            <thead id="speed-table-head"></thead>
+            <tbody id="speed-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="unit-reference-card unit-formula-card" aria-labelledby="speed-formula-heading">
+        <div class="unit-section-heading">
+          <span class="section-heading__number">02</span>
+          <div>
+            <h2 id="speed-formula-heading">단위 변환 방법</h2>
+            <p id="speed-formula-description"></p>
+          </div>
+        </div>
+        <p class="unit-formula" id="speed-formula"></p>
+      </section>
+    </main>
+    <div data-shared-component="footer"></div>
+    <script src="Assets/js/components.js"></script>
+    <script src="Assets/js/speed-converter.js"></script>
+  </body>
+</html>

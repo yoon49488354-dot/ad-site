@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="총액과 인원수를 입력해 균등분할하거나 참여자별 금액을 합산해보세요.">
+    <title>더치페이 계산기</title>
+    <link rel="stylesheet" href="Assets/css/normalize.css">
+    <link rel="stylesheet" href="Assets/css/Reset.css">
+    <link rel="stylesheet" href="Assets/css/Commons.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+  </head>
+  <body class="dutchpay-page">
+    <div data-shared-component="header"></div>
+    <main class="container page-main">
+      <section class="intro" aria-labelledby="page-title">
+        <span class="eyebrow">DUTCH PAY CALCULATOR</span>
+        <h1 id="page-title"><span>더치페이</span> 계산기</h1>
+        <p>총액을 균등하게 나누거나 참여자별 금액을 따로 계산해보세요.</p>
+      </section>
+
+      <section class="dutchpay-sections" aria-label="더치페이 계산">
+        <div class="dutchpay-tabs" role="tablist" aria-label="더치페이 방식">
+          <button class="dutchpay-tab is-active" id="equal-tab" type="button" role="tab" aria-selected="true" aria-controls="equal-panel" tabindex="0">균등분할</button>
+          <button class="dutchpay-tab" id="individual-tab" type="button" role="tab" aria-selected="false" aria-controls="individual-panel" tabindex="-1">참여자별 금액</button>
+        </div>
+        <div class="dutchpay-panel" id="equal-panel" role="tabpanel" aria-labelledby="equal-tab">
+        <form class="dutchpay-card" id="equal-split-form" novalidate>
+          <div class="dutchpay-card__heading">
+            <span class="section-heading__number">01</span>
+            <div>
+              <h2>균등분할</h2>
+              <p>총액을 인원수로 똑같이 나눕니다.</p>
+            </div>
+          </div>
+          <div class="dutchpay-equal-grid">
+            <div class="dutchpay-equal-inputs">
+              <div class="dutchpay-field">
+                <label for="split-total">총액</label>
+                <div class="amount-field__control">
+                  <input id="split-total" type="text" inputmode="numeric" autocomplete="off" placeholder="총액 입력" aria-describedby="split-total-error" required>
+                  <span aria-hidden="true">원</span>
+                </div>
+                <p class="form-error" id="split-total-error" role="alert"></p>
+              </div>
+              <div class="dutchpay-field">
+                <label for="split-count">인원수</label>
+                <div class="dutchpay-stepper">
+                  <button class="dutchpay-stepper__button" type="button" data-count-step="-1" aria-label="인원수 줄이기">−</button>
+                  <input id="split-count" type="number" inputmode="numeric" min="1" max="100" step="1" value="2" aria-describedby="split-count-error">
+                  <button class="dutchpay-stepper__button" type="button" data-count-step="1" aria-label="인원수 늘리기">+</button>
+                </div>
+                <p class="form-error" id="split-count-error" role="alert"></p>
+              </div>
+              <button class="button button--primary dutchpay-submit" type="submit">균등분할 계산하기</button>
+            </div>
+            <section class="dutchpay-result dutchpay-equal-result" id="split-result" aria-live="polite" aria-label="균등분할 결과">
+              <p class="dutchpay-result__placeholder">총액과 인원수를 입력하면 결과가 여기에 표시됩니다.</p>
+            </section>
+          </div>
+        </form>
+        </div>
+        <div class="dutchpay-panel" id="individual-panel" role="tabpanel" aria-labelledby="individual-tab" hidden>
+        <form class="dutchpay-card" id="individual-form" novalidate>
+          <div class="dutchpay-card__heading">
+            <span class="section-heading__number">02</span>
+            <div>
+              <h2>참여자별 금액</h2>
+              <p>총 금액을 입력하고 참여자별 부담 금액을 나눠 입력하세요.</p>
+            </div>
+          </div>
+          <div class="dutchpay-individual-grid">
+            <div class="dutchpay-individual-inputs">
+              <div class="dutchpay-field">
+                <label for="individual-total">총 금액</label>
+                <div class="amount-field__control">
+                  <input id="individual-total" type="text" inputmode="numeric" autocomplete="off" placeholder="총 금액 입력" aria-describedby="individual-total-error" required>
+                  <span aria-hidden="true">원</span>
+                </div>
+                <p class="form-error" id="individual-total-error" role="alert"></p>
+              </div>
+              <div class="participant-list" id="participant-list" aria-label="참여자 금액 목록"></div>
+              <button class="dutchpay-add-button" id="add-participant" type="button">＋ 참여자 추가</button>
+              <p class="form-error" id="individual-error" role="alert"></p>
+            </div>
+            <div class="dutchpay-individual-summary">
+              <section class="dutchpay-remaining" aria-live="polite" aria-label="남은 금액">
+                <span>남은 금액</span>
+                <strong id="individual-remaining">총 금액을 입력해주세요.</strong>
+              </section>
+              <div class="dutchpay-chart" id="participant-chart" aria-label="참여자별 부담 비율 그래프"></div>
+            </div>
+          </div>
+        </form>
+        </div>
+      </section>
+    </main>
+    <div data-shared-component="footer"></div>
+    <script src="Assets/js/components.js"></script>
+    <script src="Assets/js/dutchpay.js"></script>
+  </body>
+</html>
