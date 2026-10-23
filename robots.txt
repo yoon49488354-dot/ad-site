@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yoon49488354-dot.github.io/ad-site/sitemap.xml

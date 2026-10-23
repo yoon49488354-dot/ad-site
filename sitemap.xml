@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 메인 홈 페이지 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 월급·연봉 계산기 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/salary-calculator.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 아르바이트 급여 계산기 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/parttime-calculator.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 퇴직금 계산기 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/retirement-calculator.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 면적 단위 변환기 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/area-calculator.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 부피 단위 변환기 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/volume-calculator.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 속도 단위 변환기 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/speed-calculator.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 데이터 용량 변환기 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/data-size-calculator.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 할인율 계산기 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/discount-calculator.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 퍼센트 계산기 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/percentage-calculator.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 더치페이 계산기 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/dutchpay-calculator.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- PX·REM 변환기 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/px-rem-calculator.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 단위 변환기 -->
+  <url>
+    <loc>https://yoon49488354-dot.github.io/ad-site/unit-converter.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
