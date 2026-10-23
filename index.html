@@ -1,123 +1,129 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="월급·연봉, 아르바이트 급여, 퇴직금, 평수·제곱미터, 할인·퍼센트, 더치페이와 PX·REM, 단위 변환을 간편하게 계산해보세요.">
-    <title>세상의 모든 계산기</title>
-    <link rel="stylesheet" href="Assets/css/normalize.css">
-    <link rel="stylesheet" href="Assets/css/Reset.css">
-    <link rel="stylesheet" href="Assets/css/Commons.css">
-    <link rel="stylesheet" href="Assets/css/style.css">
-  </head>
-  <body>
-    <div data-shared-component="header"></div>
-    <main class="container page-main home-main">
-      <section class="intro" aria-labelledby="page-title">
-        <span class="eyebrow">ALL CALCULATORS</span>
-        <h1 id="page-title">세상의 모든 계산을 <span>간편하게</span><br class="desktop-break"> 계산해보세요</h1>
-        <p>생활 계산부터 급여, 단위 변환까지 필요한 계산기를 선택해 바로 확인해보세요.</p>
-      </section>
-      <section class="calculator-directory" aria-label="계산기 목록">
-        <a class="directory-card" href="salary-calculator.html">
-          <span class="directory-card__icon" aria-hidden="true">↔</span>
-          <span class="directory-card__content">
-            <strong>월급·연봉 계산기</strong>
-            <span>세전 연봉과 세전 월급을 서로 환산합니다.</span>
-          </span>
-          <span class="directory-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="directory-card" href="parttime-calculator.html">
-          <span class="directory-card__icon" aria-hidden="true">◷</span>
-          <span class="directory-card__content">
-            <strong>아르바이트 급여 계산기</strong>
-            <span>근무 일정과 시급을 입력해 예상 급여를 계산합니다.</span>
-          </span>
-          <span class="directory-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="directory-card" href="retirement-calculator.html">
-          <span class="directory-card__icon" aria-hidden="true">▤</span>
-          <span class="directory-card__content">
-            <strong>퇴직금 계산기</strong>
-            <span>근속기간과 퇴직 전 임금으로 예상 퇴직금을 확인합니다.</span>
-          </span>
-          <span class="directory-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="directory-card" href="area-calculator.html">
-          <span class="directory-card__icon" aria-hidden="true">㎡</span>
-          <span class="directory-card__content">
-            <strong>면적 단위 변환기</strong>
-            <span>㎡, km², 에이커, 헥타르, 평 등 다양한 면적 단위를 변환합니다.</span>
-          </span>
-          <span class="directory-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="directory-card" href="volume-calculator.html">
-          <span class="directory-card__icon" aria-hidden="true">㎤</span>
-          <span class="directory-card__content">
-            <strong>부피 단위 변환기</strong>
-            <span>cc, 리터, m³, 갤런, 온스, 배럴, 말 등을 변환합니다.</span>
-          </span>
-          <span class="directory-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="directory-card" href="speed-calculator.html">
-          <span class="directory-card__icon" aria-hidden="true">㎧</span>
-          <span class="directory-card__content">
-            <strong>속도 단위 변환기</strong>
-            <span>m/s, km/h, mph, 노트, 마하 등 속도 단위를 변환합니다.</span>
-          </span>
-          <span class="directory-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="directory-card" href="data-size-calculator.html">
-          <span class="directory-card__icon" aria-hidden="true">B</span>
-          <span class="directory-card__content">
-            <strong>데이터 용량 변환기</strong>
-            <span>바이트부터 요타바이트까지 데이터 단위를 변환합니다.</span>
-          </span>
-          <span class="directory-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="directory-card" href="discount-calculator.html">
-          <span class="directory-card__icon" aria-hidden="true">%</span>
-          <span class="directory-card__content">
-            <strong>할인율 계산기</strong>
-            <span>할인 금액과 최종 결제 가격을 간편하게 계산합니다.</span>
-          </span>
-          <span class="directory-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="directory-card" href="percentage-calculator.html">
-          <span class="directory-card__icon" aria-hidden="true">％</span>
-          <span class="directory-card__content">
-            <strong>퍼센트 계산기</strong>
-            <span>전체값의 비율, 일부값과 증감값을 계산합니다.</span>
-          </span>
-          <span class="directory-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="directory-card" href="dutchpay-calculator.html">
-          <span class="directory-card__icon" aria-hidden="true">÷</span>
-          <span class="directory-card__content">
-            <strong>더치페이 계산기</strong>
-            <span>총액을 균등하게 나누거나 참여자별 금액을 합산합니다.</span>
-          </span>
-          <span class="directory-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="directory-card" href="px-rem-calculator.html">
-          <span class="directory-card__icon" aria-hidden="true">px</span>
-          <span class="directory-card__content">
-            <strong>PX·REM 변환기</strong>
-            <span>16px 기본 글자 크기를 기준으로 px와 rem을 변환합니다.</span>
-          </span>
-          <span class="directory-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="directory-card" href="unit-converter.html">
-          <span class="directory-card__icon" aria-hidden="true">↔</span>
-          <span class="directory-card__content">
-            <strong>단위 변환기</strong>
-            <span>길이, 무게, 온도 단위를 입력 즉시 변환합니다.</span>
-          </span>
-          <span class="directory-card__arrow" aria-hidden="true">→</span>
-        </a>
-      </section>
-    </main>
-    <div data-shared-component="footer"></div>
-    <script src="Assets/js/components.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="월급·연봉, 아르바이트 급여, 퇴직금, 평수·제곱미터, 할인·퍼센트, 더치페이와 PX·REM, 단위 변환을 간편하게 계산해보세요.">
+  <title>세상의 모든 계산기</title>
+  <link rel="stylesheet" href="Assets/css/normalize.css">
+  <link rel="stylesheet" href="Assets/css/Reset.css">
+  <link rel="stylesheet" href="Assets/css/Commons.css">
+  <link rel="stylesheet" href="Assets/css/style.css">
+
+
+  <meta name="google-site-verification" content="E_l0bBpa7VOQdTcxBx0Acvou_qXg88ZfNHXC_Kp2HiM" />
+</head>
+
+<body>
+  <div data-shared-component="header"></div>
+  <main class="container page-main home-main">
+    <section class="intro" aria-labelledby="page-title">
+      <span class="eyebrow">ALL CALCULATORS</span>
+      <h1 id="page-title">세상의 모든 계산을 <span>간편하게</span><br class="desktop-break"> 계산해보세요</h1>
+      <p>생활 계산부터 급여, 단위 변환까지 필요한 계산기를 선택해 바로 확인해보세요.</p>
+    </section>
+    <section class="calculator-directory" aria-label="계산기 목록">
+      <a class="directory-card" href="salary-calculator.html">
+        <span class="directory-card__icon" aria-hidden="true">↔</span>
+        <span class="directory-card__content">
+          <strong>월급·연봉 계산기</strong>
+          <span>세전 연봉과 세전 월급을 서로 환산합니다.</span>
+        </span>
+        <span class="directory-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="directory-card" href="parttime-calculator.html">
+        <span class="directory-card__icon" aria-hidden="true">◷</span>
+        <span class="directory-card__content">
+          <strong>아르바이트 급여 계산기</strong>
+          <span>근무 일정과 시급을 입력해 예상 급여를 계산합니다.</span>
+        </span>
+        <span class="directory-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="directory-card" href="retirement-calculator.html">
+        <span class="directory-card__icon" aria-hidden="true">▤</span>
+        <span class="directory-card__content">
+          <strong>퇴직금 계산기</strong>
+          <span>근속기간과 퇴직 전 임금으로 예상 퇴직금을 확인합니다.</span>
+        </span>
+        <span class="directory-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="directory-card" href="area-calculator.html">
+        <span class="directory-card__icon" aria-hidden="true">㎡</span>
+        <span class="directory-card__content">
+          <strong>면적 단위 변환기</strong>
+          <span>㎡, km², 에이커, 헥타르, 평 등 다양한 면적 단위를 변환합니다.</span>
+        </span>
+        <span class="directory-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="directory-card" href="volume-calculator.html">
+        <span class="directory-card__icon" aria-hidden="true">㎤</span>
+        <span class="directory-card__content">
+          <strong>부피 단위 변환기</strong>
+          <span>cc, 리터, m³, 갤런, 온스, 배럴, 말 등을 변환합니다.</span>
+        </span>
+        <span class="directory-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="directory-card" href="speed-calculator.html">
+        <span class="directory-card__icon" aria-hidden="true">㎧</span>
+        <span class="directory-card__content">
+          <strong>속도 단위 변환기</strong>
+          <span>m/s, km/h, mph, 노트, 마하 등 속도 단위를 변환합니다.</span>
+        </span>
+        <span class="directory-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="directory-card" href="data-size-calculator.html">
+        <span class="directory-card__icon" aria-hidden="true">B</span>
+        <span class="directory-card__content">
+          <strong>데이터 용량 변환기</strong>
+          <span>바이트부터 요타바이트까지 데이터 단위를 변환합니다.</span>
+        </span>
+        <span class="directory-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="directory-card" href="discount-calculator.html">
+        <span class="directory-card__icon" aria-hidden="true">%</span>
+        <span class="directory-card__content">
+          <strong>할인율 계산기</strong>
+          <span>할인 금액과 최종 결제 가격을 간편하게 계산합니다.</span>
+        </span>
+        <span class="directory-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="directory-card" href="percentage-calculator.html">
+        <span class="directory-card__icon" aria-hidden="true">％</span>
+        <span class="directory-card__content">
+          <strong>퍼센트 계산기</strong>
+          <span>전체값의 비율, 일부값과 증감값을 계산합니다.</span>
+        </span>
+        <span class="directory-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="directory-card" href="dutchpay-calculator.html">
+        <span class="directory-card__icon" aria-hidden="true">÷</span>
+        <span class="directory-card__content">
+          <strong>더치페이 계산기</strong>
+          <span>총액을 균등하게 나누거나 참여자별 금액을 합산합니다.</span>
+        </span>
+        <span class="directory-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="directory-card" href="px-rem-calculator.html">
+        <span class="directory-card__icon" aria-hidden="true">px</span>
+        <span class="directory-card__content">
+          <strong>PX·REM 변환기</strong>
+          <span>16px 기본 글자 크기를 기준으로 px와 rem을 변환합니다.</span>
+        </span>
+        <span class="directory-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="directory-card" href="unit-converter.html">
+        <span class="directory-card__icon" aria-hidden="true">↔</span>
+        <span class="directory-card__content">
+          <strong>단위 변환기</strong>
+          <span>길이, 무게, 온도 단위를 입력 즉시 변환합니다.</span>
+        </span>
+        <span class="directory-card__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+  </main>
+  <div data-shared-component="footer"></div>
+  <script src="Assets/js/components.js"></script>
+</body>
+
 </html>
