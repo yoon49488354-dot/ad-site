@@ -1,80 +1,110 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="cc, 리터, m³, in³, 갤런, 온스, 배럴, 말을 입력 즉시 변환해보세요.">
-    <title>부피 변환기</title>
-    <link rel="stylesheet" href="Assets/css/normalize.css">
-    <link rel="stylesheet" href="Assets/css/Reset.css">
-    <link rel="stylesheet" href="Assets/css/Commons.css">
-    <link rel="stylesheet" href="Assets/css/style.css">
-  </head>
-  <body>
-    <div data-shared-component="header"></div>
-    <main class="container page-main">
-      <section class="intro" aria-labelledby="page-title">
-        <span class="eyebrow">VOLUME CONVERTER</span>
-        <h1 id="page-title"><span>부피 단위</span>를 쉽고 빠르게!</h1>
-        <p>부피와 단위를 선택하면 환산 결과가 바로 계산됩니다.</p>
-      </section>
 
-      <section class="unit-conversion-card" aria-label="부피 단위 변환">
-        <div class="unit-conversion-controls">
-          <div class="unit-conversion-input-field">
-            <label for="volume-value">변환할 부피</label>
-            <div class="unit-conversion-value">
-              <input id="volume-value" type="text" inputmode="decimal" autocomplete="off" value="1" aria-describedby="volume-input-error">
-            </div>
-            <p class="unit-conversion-error" id="volume-input-error" role="alert"></p>
-          </div>
-          <div class="unit-conversion-select-field unit-conversion-select-field--from">
-            <label for="volume-from">변환 전 단위</label>
-            <select id="volume-from"></select>
-          </div>
-          <button class="unit-swap-button" id="volume-swap" type="button" aria-label="변환 전후 단위 바꾸기" title="단위 바꾸기">⇄</button>
-          <div class="unit-conversion-select-field unit-conversion-select-field--to">
-            <label for="volume-to">변환 후 단위</label>
-            <select id="volume-to"></select>
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>부피 단위 변환기 - 세상의 모든 계산기</title>
+  <meta name="description"
+    content="밀리리터(mL), 리터(L), 세제곱미터(㎥), 갤런, 온스(fl oz), 배럴, 홉·되·말 등 다양한 부피 단위를 실시간으로 빠르고 간편하게 상호 변환해보세요.">
+  <meta name="keywords"
+    content="부피 단위 변환기, 부피 계산기, 리터 밀리리터 변환, 갤런 리터 변환, 온스 ml 변환, 배럴 변환, 홉 되 말 변환, 단위 변환기, 세상의 모든 계산기">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ad-site-navy.vercel.app/volume-calculator.html">
 
-        <section class="unit-conversion-result" aria-live="polite" aria-labelledby="volume-result-heading">
-          <p id="volume-result-heading" class="unit-conversion-result__label">변환 결과</p>
-          <strong class="unit-conversion-result__value" id="volume-result">0.001 liter</strong>
-          <p class="unit-conversion-result__equation" id="volume-equation">1 cc = 0.001 liter</p>
-        </section>
-      </section>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ad-site-navy.vercel.app/volume-calculator.html">
+  <meta property="og:title" content="부피 단위 변환기 - 세상의 모든 계산기">
+  <meta property="og:description"
+    content="밀리리터(mL), 리터(L), 세제곱미터(㎥), 갤런, 온스(fl oz), 배럴, 홉·되·말 등 다양한 부피 단위를 실시간으로 빠르고 간편하게 상호 변환해보세요.">
+  <meta property="og:site_name" content="세상의 모든 계산기">
+  <meta property="og:locale" content="ko_KR">
 
-      <section class="unit-reference-card" aria-labelledby="volume-table-heading">
-        <div class="unit-section-heading">
-          <span class="section-heading__number">01</span>
-          <div>
-            <h2 id="volume-table-heading">부피 변환표</h2>
-            <p id="volume-table-summary">행은 변환 전, 열은 변환 후 단위입니다.</p>
-          </div>
-        </div>
-        <div class="unit-table-scroll" tabindex="0" aria-label="부피 단위 변환표">
-          <table class="unit-reference-table unit-reference-table--matrix" id="volume-reference-table">
-            <thead id="volume-table-head"></thead>
-            <tbody id="volume-table-body"></tbody>
-          </table>
-        </div>
-      </section>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://ad-site-navy.vercel.app/volume-calculator.html">
+  <meta name="twitter:title" content="부피 단위 변환기 - 세상의 모든 계산기">
+  <meta name="twitter:description"
+    content="밀리리터(mL), 리터(L), 세제곱미터(㎥), 갤런, 온스(fl oz), 배럴, 홉·되·말 등 다양한 부피 단위를 실시간으로 빠르고 간편하게 상호 변환해보세요.">
 
-      <section class="unit-reference-card unit-formula-card" aria-labelledby="volume-formula-heading">
-        <div class="unit-section-heading">
-          <span class="section-heading__number">02</span>
-          <div>
-            <h2 id="volume-formula-heading">단위 변환 방법</h2>
-            <p id="volume-formula-description"></p>
+  <link rel="stylesheet" href="Assets/css/normalize.css">
+  <link rel="stylesheet" href="Assets/css/Reset.css">
+  <link rel="stylesheet" href="Assets/css/Commons.css">
+  <link rel="stylesheet" href="Assets/css/style.css">
+
+  <meta name="google-site-verification" content="J_2k6JVeuW_lqhvMg996a8JIWAD8cWqkynBis4V1Ckc" />
+  <meta name="naver-site-verification" content="25bf50878d3f2e70aefc1e3d2cf69f3e8c91e701" />
+</head>
+
+<body>
+  <div data-shared-component="header"></div>
+  <main class="container page-main">
+    <section class="intro" aria-labelledby="page-title">
+      <span class="eyebrow">VOLUME CONVERTER</span>
+      <h1 id="page-title"><span>부피 단위</span>를 쉽고 빠르게!</h1>
+      <p>부피와 단위를 선택하면 환산 결과가 바로 계산됩니다.</p>
+    </section>
+
+    <section class="unit-conversion-card" aria-label="부피 단위 변환">
+      <div class="unit-conversion-controls">
+        <div class="unit-conversion-input-field">
+          <label for="volume-value">변환할 부피</label>
+          <div class="unit-conversion-value">
+            <input id="volume-value" type="text" inputmode="decimal" autocomplete="off" value="1"
+              aria-describedby="volume-input-error">
           </div>
+          <p class="unit-conversion-error" id="volume-input-error" role="alert"></p>
         </div>
-        <p class="unit-formula" id="volume-formula"></p>
+        <div class="unit-conversion-select-field unit-conversion-select-field--from">
+          <label for="volume-from">변환 전 단위</label>
+          <select id="volume-from"></select>
+        </div>
+        <button class="unit-swap-button" id="volume-swap" type="button" aria-label="변환 전후 단위 바꾸기"
+          title="단위 바꾸기">⇄</button>
+        <div class="unit-conversion-select-field unit-conversion-select-field--to">
+          <label for="volume-to">변환 후 단위</label>
+          <select id="volume-to"></select>
+        </div>
+      </div>
+
+      <section class="unit-conversion-result" aria-live="polite" aria-labelledby="volume-result-heading">
+        <p id="volume-result-heading" class="unit-conversion-result__label">변환 결과</p>
+        <strong class="unit-conversion-result__value" id="volume-result">0.001 liter</strong>
+        <p class="unit-conversion-result__equation" id="volume-equation">1 cc = 0.001 liter</p>
       </section>
-    </main>
-    <div data-shared-component="footer"></div>
-    <script src="Assets/js/components.js"></script>
-    <script src="Assets/js/volume-converter.js"></script>
-  </body>
+    </section>
+
+    <section class="unit-reference-card" aria-labelledby="volume-table-heading">
+      <div class="unit-section-heading">
+        <span class="section-heading__number">01</span>
+        <div>
+          <h2 id="volume-table-heading">부피 변환표</h2>
+          <p id="volume-table-summary">행은 변환 전, 열은 변환 후 단위입니다.</p>
+        </div>
+      </div>
+      <div class="unit-table-scroll" tabindex="0" aria-label="부피 단위 변환표">
+        <table class="unit-reference-table unit-reference-table--matrix" id="volume-reference-table">
+          <thead id="volume-table-head"></thead>
+          <tbody id="volume-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="unit-reference-card unit-formula-card" aria-labelledby="volume-formula-heading">
+      <div class="unit-section-heading">
+        <span class="section-heading__number">02</span>
+        <div>
+          <h2 id="volume-formula-heading">단위 변환 방법</h2>
+          <p id="volume-formula-description"></p>
+        </div>
+      </div>
+      <p class="unit-formula" id="volume-formula"></p>
+    </section>
+  </main>
+  <div data-shared-component="footer"></div>
+  <script src="Assets/js/components.js"></script>
+  <script src="Assets/js/volume-converter.js"></script>
+</body>
+
 </html>
