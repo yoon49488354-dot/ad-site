@@ -262,4 +262,65 @@
       }, 2200);
     }
   }
+
+  // -- Coupang Partners Banner (shared component) --------------------------
+  // <script> tags injected via innerHTML/outerHTML are NOT executed by browsers.
+  // Solution: load dedicated banner HTML files inside <iframe> elements so that
+  // the ad scripts run naturally in their own document context.
+  (function () {
+    var placeholder = document.querySelector('[data-shared-component="coupang-banner"]');
+    if (!placeholder) return;
+
+    var base = 'Assets/html/';
+
+    // wrapper
+    var wrap = document.createElement('div');
+    wrap.className = 'coupang-banner-wrap';
+
+    // PC iframe (680x140, shown on desktop)
+    var pcFrame = document.createElement('iframe');
+    pcFrame.className   = 'coupang-iframe coupang-iframe--pc';
+    pcFrame.src         = base + 'coupang-banner-pc.html';
+    pcFrame.width       = '680';
+    pcFrame.height      = '140';
+    pcFrame.scrolling   = 'no';
+    pcFrame.frameBorder = '0';
+    pcFrame.setAttribute('aria-hidden', 'true');
+    pcFrame.setAttribute('tabindex',    '-1');
+
+    // MO iframe (280x140, shown on mobile)
+    var moFrame = document.createElement('iframe');
+    moFrame.className   = 'coupang-iframe coupang-iframe--mo';
+    moFrame.src         = base + 'coupang-banner-mo.html';
+    moFrame.width       = '280';
+    moFrame.height      = '140';
+    moFrame.scrolling   = 'no';
+    moFrame.frameBorder = '0';
+    moFrame.setAttribute('aria-hidden', 'true');
+    moFrame.setAttribute('tabindex',    '-1');
+
+    // marquee notice
+    var marqueeWrap = document.createElement('div');
+    marqueeWrap.className = 'coupang-marquee-wrap';
+
+    var marqueeP = document.createElement('p');
+    marqueeP.className = 'coupang-marquee';
+
+    var marqueeSpan = document.createElement('span');
+    marqueeSpan.setAttribute('aria-hidden', 'true');
+    var txt = '\uc774 \uc0ac\uc774\ud2b8\ub294 \ucfe0\ud321 \ud30c\ud2b8\ub108\uc2a4 \ud65c\ub3d9\uc758 \uc77c\ud658\uc73c\ub85c, \uc774\uc5d0 \ub530\ub978 \uc77c\uc815\uc561\uc758 \uc218\uc218\ub8cc\ub97c \uc81c\uacf5\ubc1b\uc2b5\ub2c8\ub2e4.';
+    marqueeSpan.innerHTML =
+      txt + '\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0' +
+      txt + '\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0';
+
+    marqueeP.appendChild(marqueeSpan);
+    marqueeWrap.appendChild(marqueeP);
+
+    wrap.appendChild(pcFrame);
+    wrap.appendChild(moFrame);
+    wrap.appendChild(marqueeWrap);
+
+    placeholder.parentNode.replaceChild(wrap, placeholder);
+  }());
+
 })();

@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>속도 단위 변환기 - 세상의 모든 계산기</title>
-    <meta name="description" content="m/s, km/h, mph, knot(노트), 마하(Mach) 등 다양한 속도 단위를 실시간으로 빠르고 간편하게 상호 변환해보세요.">
-    <meta name="keywords" content="속도 단위 변환기, 속도 계산기, km/h m/s 변환, mph km/h 변환, 노트 마하 변환, 단위 변환기, 세상의 모든 계산기">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://ad-site-navy.vercel.app/speed-calculator.html">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ad-site-navy.vercel.app/speed-calculator.html">
-    <meta property="og:title" content="속도 단위 변환기 - 세상의 모든 계산기">
-    <meta property="og:description" content="m/s, km/h, mph, knot(노트), 마하(Mach) 등 다양한 속도 단위를 실시간으로 빠르고 간편하게 상호 변환해보세요.">
-    <meta property="og:site_name" content="세상의 모든 계산기">
-    <meta property="og:locale" content="ko_KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>속도 단위 변환기 - 세상의 모든 계산기</title>
+  <meta name="description" content="m/s, km/h, mph, knot(노트), 마하(Mach) 등 다양한 속도 단위를 실시간으로 빠르고 간편하게 상호 변환해보세요.">
+  <meta name="keywords" content="속도 단위 변환기, 속도 계산기, km/h m/s 변환, mph km/h 변환, 노트 마하 변환, 단위 변환기, 세상의 모든 계산기">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ad-site-navy.vercel.app/speed-calculator.html">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="https://ad-site-navy.vercel.app/speed-calculator.html">
-    <meta name="twitter:title" content="속도 단위 변환기 - 세상의 모든 계산기">
-    <meta name="twitter:description" content="m/s, km/h, mph, knot(노트), 마하(Mach) 등 다양한 속도 단위를 실시간으로 빠르고 간편하게 상호 변환해보세요.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ad-site-navy.vercel.app/speed-calculator.html">
+  <meta property="og:title" content="속도 단위 변환기 - 세상의 모든 계산기">
+  <meta property="og:description" content="m/s, km/h, mph, knot(노트), 마하(Mach) 등 다양한 속도 단위를 실시간으로 빠르고 간편하게 상호 변환해보세요.">
+  <meta property="og:site_name" content="세상의 모든 계산기">
+  <meta property="og:locale" content="ko_KR">
 
-    <link rel="stylesheet" href="Assets/css/normalize.css">
-    <link rel="stylesheet" href="Assets/css/Reset.css">
-    <link rel="stylesheet" href="Assets/css/Commons.css">
-    <link rel="stylesheet" href="Assets/css/style.css">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://ad-site-navy.vercel.app/speed-calculator.html">
+  <meta name="twitter:title" content="속도 단위 변환기 - 세상의 모든 계산기">
+  <meta name="twitter:description" content="m/s, km/h, mph, knot(노트), 마하(Mach) 등 다양한 속도 단위를 실시간으로 빠르고 간편하게 상호 변환해보세요.">
 
-    <meta name="google-site-verification" content="J_2k6JVeuW_lqhvMg996a8JIWAD8cWqkynBis4V1Ckc" />
-    <meta name="naver-site-verification" content="25bf50878d3f2e70aefc1e3d2cf69f3e8c91e701" />
-  </head>
-  <body>
-    <div data-shared-component="header"></div>
+  <link rel="stylesheet" href="Assets/css/normalize.css">
+  <link rel="stylesheet" href="Assets/css/Reset.css">
+  <link rel="stylesheet" href="Assets/css/Commons.css">
+  <link rel="stylesheet" href="Assets/css/style.css">
+
+  <meta name="google-site-verification" content="J_2k6JVeuW_lqhvMg996a8JIWAD8cWqkynBis4V1Ckc" />
+  <meta name="naver-site-verification" content="25bf50878d3f2e70aefc1e3d2cf69f3e8c91e701" />
+</head>
+
+<body>
+  <div data-shared-component="header"></div>
+  <div data-shared-component="coupang-banner"></div> ← 이미 삽입됨
+  <main class="container page-main">
     <main class="container page-main">
       <section class="intro" aria-labelledby="page-title">
         <span class="eyebrow">SPEED CONVERTER</span>
@@ -45,7 +49,8 @@
           <div class="unit-conversion-input-field">
             <label for="speed-value">변환할 속도</label>
             <div class="unit-conversion-value">
-              <input id="speed-value" type="text" inputmode="decimal" autocomplete="off" value="1" aria-describedby="speed-input-error">
+              <input id="speed-value" type="text" inputmode="decimal" autocomplete="off" value="1"
+                aria-describedby="speed-input-error">
             </div>
             <p class="unit-conversion-error" id="speed-input-error" role="alert"></p>
           </div>
@@ -53,7 +58,8 @@
             <label for="speed-from">변환 전 단위</label>
             <select id="speed-from"></select>
           </div>
-          <button class="unit-swap-button" id="speed-swap" type="button" aria-label="변환 전후 단위 바꾸기" title="단위 바꾸기">⇄</button>
+          <button class="unit-swap-button" id="speed-swap" type="button" aria-label="변환 전후 단위 바꾸기"
+            title="단위 바꾸기">⇄</button>
           <div class="unit-conversion-select-field unit-conversion-select-field--to">
             <label for="speed-to">변환 후 단위</label>
             <select id="speed-to"></select>
@@ -97,5 +103,6 @@
     <div data-shared-component="footer"></div>
     <script src="Assets/js/components.js"></script>
     <script src="Assets/js/speed-converter.js"></script>
-  </body>
+</body>
+
 </html>

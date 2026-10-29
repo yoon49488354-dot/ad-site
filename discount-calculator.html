@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>할인율 계산기 - 세상의 모든 계산기</title>
-    <meta name="description" content="상품 가격과 할인율을 입력해 할인 금액과 최종 결제 금액을 계산하거나, 할인가로 할인율을 역산해보세요.">
-    <meta name="keywords" content="할인율 계산기, 할인 가격 계산기, 세일 계산기, 퍼센트 할인, 할인율 역산, 쇼핑 할인 계산, 세상의 모든 계산기">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://ad-site-navy.vercel.app/discount-calculator.html">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ad-site-navy.vercel.app/discount-calculator.html">
-    <meta property="og:title" content="할인율 계산기 - 세상의 모든 계산기">
-    <meta property="og:description" content="상품 가격과 할인율을 입력해 할인 금액과 최종 결제 금액을 계산하거나, 할인가로 할인율을 역산해보세요.">
-    <meta property="og:site_name" content="세상의 모든 계산기">
-    <meta property="og:locale" content="ko_KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>할인율 계산기 - 세상의 모든 계산기</title>
+  <meta name="description" content="상품 가격과 할인율을 입력해 할인 금액과 최종 결제 금액을 계산하거나, 할인가로 할인율을 역산해보세요.">
+  <meta name="keywords" content="할인율 계산기, 할인 가격 계산기, 세일 계산기, 퍼센트 할인, 할인율 역산, 쇼핑 할인 계산, 세상의 모든 계산기">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ad-site-navy.vercel.app/discount-calculator.html">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="https://ad-site-navy.vercel.app/discount-calculator.html">
-    <meta name="twitter:title" content="할인율 계산기 - 세상의 모든 계산기">
-    <meta name="twitter:description" content="상품 가격과 할인율을 입력해 할인 금액과 최종 결제 금액을 계산하거나, 할인가로 할인율을 역산해보세요.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ad-site-navy.vercel.app/discount-calculator.html">
+  <meta property="og:title" content="할인율 계산기 - 세상의 모든 계산기">
+  <meta property="og:description" content="상품 가격과 할인율을 입력해 할인 금액과 최종 결제 금액을 계산하거나, 할인가로 할인율을 역산해보세요.">
+  <meta property="og:site_name" content="세상의 모든 계산기">
+  <meta property="og:locale" content="ko_KR">
 
-    <link rel="stylesheet" href="Assets/css/normalize.css">
-    <link rel="stylesheet" href="Assets/css/Reset.css">
-    <link rel="stylesheet" href="Assets/css/Commons.css">
-    <link rel="stylesheet" href="Assets/css/style.css">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://ad-site-navy.vercel.app/discount-calculator.html">
+  <meta name="twitter:title" content="할인율 계산기 - 세상의 모든 계산기">
+  <meta name="twitter:description" content="상품 가격과 할인율을 입력해 할인 금액과 최종 결제 금액을 계산하거나, 할인가로 할인율을 역산해보세요.">
 
-    <meta name="google-site-verification" content="J_2k6JVeuW_lqhvMg996a8JIWAD8cWqkynBis4V1Ckc" />
-    <meta name="naver-site-verification" content="25bf50878d3f2e70aefc1e3d2cf69f3e8c91e701" />
-  </head>
-  <body class="discount-calculator-page">
+  <link rel="stylesheet" href="Assets/css/normalize.css">
+  <link rel="stylesheet" href="Assets/css/Reset.css">
+  <link rel="stylesheet" href="Assets/css/Commons.css">
+  <link rel="stylesheet" href="Assets/css/style.css">
+
+  <meta name="google-site-verification" content="J_2k6JVeuW_lqhvMg996a8JIWAD8cWqkynBis4V1Ckc" />
+  <meta name="naver-site-verification" content="25bf50878d3f2e70aefc1e3d2cf69f3e8c91e701" />
+</head>
+
+<body class="discount-calculator-page">
+  <div data-shared-component="header"></div>
+  <div data-shared-component="coupang-banner"></div>
+  <main class="container page-main">
     <div data-shared-component="header"></div>
     <main class="container page-main">
       <section class="intro" aria-labelledby="page-title">
@@ -50,14 +55,16 @@
           </div>
           <fieldset class="salary-calc-modes">
             <legend>계산 방식</legend>
-            <label><input type="radio" name="discount-calc-mode" value="discount-price" checked><span>할인 가격 계산</span></label>
+            <label><input type="radio" name="discount-calc-mode" value="discount-price" checked><span>할인 가격
+                계산</span></label>
             <label><input type="radio" name="discount-calc-mode" value="discount-rate"><span>할인율 역산</span></label>
           </fieldset>
           <div class="discount-input-group" data-discount-mode="discount-price">
             <div class="amount-field salary-amount-field">
               <label for="discount-original-price">상품 원래 가격</label>
               <div class="amount-field__control">
-                <input id="discount-original-price" type="text" inputmode="decimal" autocomplete="off" placeholder="상품 원래 가격 입력" aria-describedby="discount-original-hint discount-form-error" required>
+                <input id="discount-original-price" type="text" inputmode="decimal" autocomplete="off"
+                  placeholder="상품 원래 가격 입력" aria-describedby="discount-original-hint discount-form-error" required>
                 <span aria-hidden="true">원</span>
               </div>
               <p class="field-hint" id="discount-original-hint">할인 전 상품 가격을 입력해주세요.</p>
@@ -65,7 +72,8 @@
             <div class="amount-field salary-amount-field">
               <label for="discount-rate">할인율</label>
               <div class="amount-field__control">
-                <input id="discount-rate" type="text" inputmode="decimal" autocomplete="off" placeholder="할인율 입력" aria-describedby="discount-rate-hint discount-form-error" required>
+                <input id="discount-rate" type="text" inputmode="decimal" autocomplete="off" placeholder="할인율 입력"
+                  aria-describedby="discount-rate-hint discount-form-error" required>
                 <span aria-hidden="true">%</span>
               </div>
               <p class="field-hint" id="discount-rate-hint">0~100% 사이의 할인율을 입력해주세요.</p>
@@ -75,7 +83,8 @@
             <div class="amount-field salary-amount-field">
               <label for="reverse-original-price">상품 원래 가격</label>
               <div class="amount-field__control">
-                <input id="reverse-original-price" type="text" inputmode="decimal" autocomplete="off" placeholder="상품 원래 가격 입력" aria-describedby="reverse-original-hint discount-form-error" required>
+                <input id="reverse-original-price" type="text" inputmode="decimal" autocomplete="off"
+                  placeholder="상품 원래 가격 입력" aria-describedby="reverse-original-hint discount-form-error" required>
                 <span aria-hidden="true">원</span>
               </div>
               <p class="field-hint" id="reverse-original-hint">할인 전 상품 가격을 입력해주세요.</p>
@@ -83,16 +92,19 @@
             <div class="amount-field salary-amount-field">
               <label for="discounted-price">할인된 판매 가격</label>
               <div class="amount-field__control">
-                <input id="discounted-price" type="text" inputmode="decimal" autocomplete="off" placeholder="할인된 판매 가격 입력" aria-describedby="discounted-price-hint discount-form-error" required>
+                <input id="discounted-price" type="text" inputmode="decimal" autocomplete="off"
+                  placeholder="할인된 판매 가격 입력" aria-describedby="discounted-price-hint discount-form-error" required>
                 <span aria-hidden="true">원</span>
               </div>
               <p class="field-hint" id="discounted-price-hint">할인 후 실제 판매 가격을 입력해주세요.</p>
             </div>
           </div>
           <p class="form-error discount-form-error" id="discount-form-error" role="alert"></p>
-          <button class="button button--primary calculate-button" type="submit">계산하기 <span aria-hidden="true">→</span></button>
+          <button class="button button--primary calculate-button" type="submit">계산하기 <span
+              aria-hidden="true">→</span></button>
         </form>
-        <section class="calculator__result salary-calculator-result" aria-labelledby="discount-result-title" aria-live="polite">
+        <section class="calculator__result salary-calculator-result" aria-labelledby="discount-result-title"
+          aria-live="polite">
           <div class="section-heading section-heading--result">
             <span class="section-heading__number">02</span>
             <div>
@@ -104,12 +116,14 @@
             <p class="discount-result-empty" id="discount-result-empty">계산하기를 누르면 결과를 확인할 수 있습니다.</p>
             <div id="discount-result-details" hidden></div>
           </div>
-          <p class="calculation-note discount-calculation-note">할인 금액과 최종 결제 금액은 원 단위로 반올림합니다. 실제 판매 가격과 결제 금액은 상품별 조건에 따라 다를 수 있습니다.</p>
+          <p class="calculation-note discount-calculation-note">할인 금액과 최종 결제 금액은 원 단위로 반올림합니다. 실제 판매 가격과 결제 금액은 상품별 조건에
+            따라 다를 수 있습니다.</p>
         </section>
       </section>
     </main>
     <div data-shared-component="footer"></div>
     <script src="Assets/js/components.js"></script>
     <script src="Assets/js/discount.js"></script>
-  </body>
+</body>
+
 </html>

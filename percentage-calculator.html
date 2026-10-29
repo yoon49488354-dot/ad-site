@@ -35,98 +35,101 @@
 
 <body class="percentage-calculator-page">
   <div data-shared-component="header"></div>
+  <div data-shared-component="coupang-banner"></div>
   <main class="container page-main">
-    <section class="intro" aria-labelledby="page-title">
-      <span class="eyebrow">PERCENTAGE CALCULATOR</span>
-      <h1 id="page-title"><span>퍼센트</span> 계산기</h1>
-      <p>비율, 일부값과 증감값을 간편하게 계산해보세요.</p>
-    </section>
-    <section class="percentage-calculator" aria-label="퍼센트 계산기">
-      <form id="percentage-form" novalidate>
-        <div class="percentage-calculator__heading">
-          <div>
-            <h2>계산기</h2>
-            <p>계산할 항목의 값을 입력해주세요.</p>
+    <div data-shared-component="header"></div>
+    <main class="container page-main">
+      <section class="intro" aria-labelledby="page-title">
+        <span class="eyebrow">PERCENTAGE CALCULATOR</span>
+        <h1 id="page-title"><span>퍼센트</span> 계산기</h1>
+        <p>비율, 일부값과 증감값을 간편하게 계산해보세요.</p>
+      </section>
+      <section class="percentage-calculator" aria-label="퍼센트 계산기">
+        <form id="percentage-form" novalidate>
+          <div class="percentage-calculator__heading">
+            <div>
+              <h2>계산기</h2>
+              <p>계산할 항목의 값을 입력해주세요.</p>
+            </div>
+            <div class="percentage-calculator__actions">
+              <button class="button button--primary" type="submit">계산</button>
+              <button class="button percentage-reset-button" type="reset">초기화</button>
+            </div>
           </div>
-          <div class="percentage-calculator__actions">
-            <button class="button button--primary" type="submit">계산</button>
-            <button class="button percentage-reset-button" type="reset">초기화</button>
+          <div class="percentage-rows">
+            <fieldset class="percentage-row" data-calculation="ratio">
+              <legend>전체값의 비율값</legend>
+              <label class="percentage-row__field">
+                <span class="sr-only">전체값</span>
+                <input type="text" inputmode="decimal" autocomplete="off" data-value="whole" placeholder="전체값 예) 10000"
+                  aria-label="비율 계산 전체값">
+              </label>
+              <span class="percentage-row__connector">의</span>
+              <label class="percentage-row__field percentage-row__field--secondary">
+                <span class="sr-only">비율값</span>
+                <input type="text" inputmode="decimal" autocomplete="off" data-value="percentage"
+                  placeholder="비율값 예) 20" aria-label="계산할 비율 퍼센트">
+              </label>
+              <span class="percentage-row__question">%는 얼마?</span>
+              <output class="percentage-row__result" aria-live="polite"></output>
+            </fieldset>
+            <fieldset class="percentage-row" data-calculation="part">
+              <legend>전체값의 일부값</legend>
+              <label class="percentage-row__field">
+                <span class="sr-only">전체값</span>
+                <input type="text" inputmode="decimal" autocomplete="off" data-value="whole" placeholder="전체값 예) 10000"
+                  aria-label="일부값 계산 전체값">
+              </label>
+              <span class="percentage-row__connector">의</span>
+              <label class="percentage-row__field percentage-row__field--secondary">
+                <span class="sr-only">일부값</span>
+                <input type="text" inputmode="decimal" autocomplete="off" data-value="part" placeholder="일부값 예) 500"
+                  aria-label="전체값 중 일부값">
+              </label>
+              <span class="percentage-row__question">은 몇 %?</span>
+              <output class="percentage-row__result" aria-live="polite"></output>
+            </fieldset>
+            <fieldset class="percentage-row" data-calculation="change">
+              <legend>전체값이 변경 후 값으로 변했을 때 증감률</legend>
+              <label class="percentage-row__field">
+                <span class="sr-only">변경 전 전체값</span>
+                <input type="text" inputmode="decimal" autocomplete="off" data-value="whole" placeholder="전체값 예) 10000"
+                  aria-label="증감 계산 변경 전 전체값">
+              </label>
+              <span class="percentage-row__connector">에서</span>
+              <label class="percentage-row__field percentage-row__field--secondary">
+                <span class="sr-only">변경 후 값</span>
+                <input type="text" inputmode="decimal" autocomplete="off" data-value="changed" placeholder="변경 후 예) 150"
+                  aria-label="증감 계산 변경 후 값">
+              </label>
+              <span class="percentage-row__question">으로 변했을 때 증감률은?</span>
+              <output class="percentage-row__result" aria-live="polite"></output>
+            </fieldset>
+            <fieldset class="percentage-row" data-calculation="change-rate">
+              <legend>전체값의 증감율</legend>
+              <label class="percentage-row__field">
+                <span class="sr-only">변경 전 전체값</span>
+                <input type="text" inputmode="decimal" autocomplete="off" data-value="whole" placeholder="전체값 예) 10000"
+                  aria-label="증감율 계산 변경 전 전체값">
+              </label>
+              <span class="percentage-row__connector">이/가</span>
+              <label class="percentage-row__field percentage-row__field--secondary">
+                <span class="sr-only">증감율</span>
+                <input type="text" inputmode="decimal" autocomplete="off" data-value="change-rate"
+                  placeholder="증감율 예) 25" aria-label="증감율 퍼센트">
+              </label>
+              <span class="percentage-row__question">% 증감하면?</span>
+              <output class="percentage-row__result" aria-live="polite"></output>
+            </fieldset>
           </div>
-        </div>
-        <div class="percentage-rows">
-          <fieldset class="percentage-row" data-calculation="ratio">
-            <legend>전체값의 비율값</legend>
-            <label class="percentage-row__field">
-              <span class="sr-only">전체값</span>
-              <input type="text" inputmode="decimal" autocomplete="off" data-value="whole" placeholder="전체값 예) 10000"
-                aria-label="비율 계산 전체값">
-            </label>
-            <span class="percentage-row__connector">의</span>
-            <label class="percentage-row__field percentage-row__field--secondary">
-              <span class="sr-only">비율값</span>
-              <input type="text" inputmode="decimal" autocomplete="off" data-value="percentage" placeholder="비율값 예) 20"
-                aria-label="계산할 비율 퍼센트">
-            </label>
-            <span class="percentage-row__question">%는 얼마?</span>
-            <output class="percentage-row__result" aria-live="polite"></output>
-          </fieldset>
-          <fieldset class="percentage-row" data-calculation="part">
-            <legend>전체값의 일부값</legend>
-            <label class="percentage-row__field">
-              <span class="sr-only">전체값</span>
-              <input type="text" inputmode="decimal" autocomplete="off" data-value="whole" placeholder="전체값 예) 10000"
-                aria-label="일부값 계산 전체값">
-            </label>
-            <span class="percentage-row__connector">의</span>
-            <label class="percentage-row__field percentage-row__field--secondary">
-              <span class="sr-only">일부값</span>
-              <input type="text" inputmode="decimal" autocomplete="off" data-value="part" placeholder="일부값 예) 500"
-                aria-label="전체값 중 일부값">
-            </label>
-            <span class="percentage-row__question">은 몇 %?</span>
-            <output class="percentage-row__result" aria-live="polite"></output>
-          </fieldset>
-          <fieldset class="percentage-row" data-calculation="change">
-            <legend>전체값이 변경 후 값으로 변했을 때 증감률</legend>
-            <label class="percentage-row__field">
-              <span class="sr-only">변경 전 전체값</span>
-              <input type="text" inputmode="decimal" autocomplete="off" data-value="whole" placeholder="전체값 예) 10000"
-                aria-label="증감 계산 변경 전 전체값">
-            </label>
-            <span class="percentage-row__connector">에서</span>
-            <label class="percentage-row__field percentage-row__field--secondary">
-              <span class="sr-only">변경 후 값</span>
-              <input type="text" inputmode="decimal" autocomplete="off" data-value="changed" placeholder="변경 후 예) 150"
-                aria-label="증감 계산 변경 후 값">
-            </label>
-            <span class="percentage-row__question">으로 변했을 때 증감률은?</span>
-            <output class="percentage-row__result" aria-live="polite"></output>
-          </fieldset>
-          <fieldset class="percentage-row" data-calculation="change-rate">
-            <legend>전체값의 증감율</legend>
-            <label class="percentage-row__field">
-              <span class="sr-only">변경 전 전체값</span>
-              <input type="text" inputmode="decimal" autocomplete="off" data-value="whole" placeholder="전체값 예) 10000"
-                aria-label="증감율 계산 변경 전 전체값">
-            </label>
-            <span class="percentage-row__connector">이/가</span>
-            <label class="percentage-row__field percentage-row__field--secondary">
-              <span class="sr-only">증감율</span>
-              <input type="text" inputmode="decimal" autocomplete="off" data-value="change-rate" placeholder="증감율 예) 25"
-                aria-label="증감율 퍼센트">
-            </label>
-            <span class="percentage-row__question">% 증감하면?</span>
-            <output class="percentage-row__result" aria-live="polite"></output>
-          </fieldset>
-        </div>
-      </form>
-    </section>
-    <p class="percentage-calculator__note"><span aria-hidden="true">ⓘ</span> 간단한 계산을 위한 웹 계산기입니다. 소수점은 최대 11자리까지 표시하며,
-      매우 큰 수는 반올림 오차가 있을 수 있습니다.</p>
-  </main>
-  <div data-shared-component="footer"></div>
-  <script src="Assets/js/components.js"></script>
-  <script src="Assets/js/percentage.js"></script>
+        </form>
+      </section>
+      <p class="percentage-calculator__note"><span aria-hidden="true">ⓘ</span> 간단한 계산을 위한 웹 계산기입니다. 소수점은 최대 11자리까지 표시하며,
+        매우 큰 수는 반올림 오차가 있을 수 있습니다.</p>
+    </main>
+    <div data-shared-component="footer"></div>
+    <script src="Assets/js/components.js"></script>
+    <script src="Assets/js/percentage.js"></script>
 </body>
 
 </html>

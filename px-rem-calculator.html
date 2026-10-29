@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PX·REM 변환기 - 세상의 모든 계산기</title>
-    <meta name="description" content="기본 글자 크기(16px) 기준으로 픽셀(px)과 rem 값을 양방향으로 즉시 변환해보세요.">
-    <meta name="keywords" content="PX REM 변환기, px to rem, rem to px, 픽셀 rem 변환, CSS 단위 변환, 웹디자인 단위 계산기, 세상의 모든 계산기">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://ad-site-navy.vercel.app/px-rem-calculator.html">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ad-site-navy.vercel.app/px-rem-calculator.html">
-    <meta property="og:title" content="PX·REM 변환기 - 세상의 모든 계산기">
-    <meta property="og:description" content="기본 글자 크기(16px) 기준으로 픽셀(px)과 rem 값을 양방향으로 즉시 변환해보세요.">
-    <meta property="og:site_name" content="세상의 모든 계산기">
-    <meta property="og:locale" content="ko_KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PX·REM 변환기 - 세상의 모든 계산기</title>
+  <meta name="description" content="기본 글자 크기(16px) 기준으로 픽셀(px)과 rem 값을 양방향으로 즉시 변환해보세요.">
+  <meta name="keywords" content="PX REM 변환기, px to rem, rem to px, 픽셀 rem 변환, CSS 단위 변환, 웹디자인 단위 계산기, 세상의 모든 계산기">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ad-site-navy.vercel.app/px-rem-calculator.html">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="https://ad-site-navy.vercel.app/px-rem-calculator.html">
-    <meta name="twitter:title" content="PX·REM 변환기 - 세상의 모든 계산기">
-    <meta name="twitter:description" content="기본 글자 크기(16px) 기준으로 픽셀(px)과 rem 값을 양방향으로 즉시 변환해보세요.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ad-site-navy.vercel.app/px-rem-calculator.html">
+  <meta property="og:title" content="PX·REM 변환기 - 세상의 모든 계산기">
+  <meta property="og:description" content="기본 글자 크기(16px) 기준으로 픽셀(px)과 rem 값을 양방향으로 즉시 변환해보세요.">
+  <meta property="og:site_name" content="세상의 모든 계산기">
+  <meta property="og:locale" content="ko_KR">
 
-    <link rel="stylesheet" href="Assets/css/normalize.css">
-    <link rel="stylesheet" href="Assets/css/Reset.css">
-    <link rel="stylesheet" href="Assets/css/Commons.css">
-    <link rel="stylesheet" href="Assets/css/style.css">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://ad-site-navy.vercel.app/px-rem-calculator.html">
+  <meta name="twitter:title" content="PX·REM 변환기 - 세상의 모든 계산기">
+  <meta name="twitter:description" content="기본 글자 크기(16px) 기준으로 픽셀(px)과 rem 값을 양방향으로 즉시 변환해보세요.">
 
-    <meta name="google-site-verification" content="J_2k6JVeuW_lqhvMg996a8JIWAD8cWqkynBis4V1Ckc" />
-    <meta name="naver-site-verification" content="25bf50878d3f2e70aefc1e3d2cf69f3e8c91e701" />
-  </head>
-  <body class="unit-converter-page">
+  <link rel="stylesheet" href="Assets/css/normalize.css">
+  <link rel="stylesheet" href="Assets/css/Reset.css">
+  <link rel="stylesheet" href="Assets/css/Commons.css">
+  <link rel="stylesheet" href="Assets/css/style.css">
+
+  <meta name="google-site-verification" content="J_2k6JVeuW_lqhvMg996a8JIWAD8cWqkynBis4V1Ckc" />
+  <meta name="naver-site-verification" content="25bf50878d3f2e70aefc1e3d2cf69f3e8c91e701" />
+</head>
+
+<body class="unit-converter-page">
+  <div data-shared-component="header"></div>
+  <div data-shared-component="coupang-banner"></div>
+  <main class="container page-main">
     <div data-shared-component="header"></div>
     <main class="container page-main">
       <section class="intro" aria-labelledby="page-title">
@@ -44,10 +49,12 @@
           <div class="unit-converter__field">
             <label for="px-value">Pixels</label>
             <div class="unit-converter__input">
-              <button class="unit-converter__copy" type="button" data-copy-target="px-value" aria-label="픽셀 값 복사" title="복사">
+              <button class="unit-converter__copy" type="button" data-copy-target="px-value" aria-label="픽셀 값 복사"
+                title="복사">
                 <span aria-hidden="true">▢</span>
               </button>
-              <input id="px-value" type="text" inputmode="decimal" autocomplete="off" value="16" aria-describedby="px-error">
+              <input id="px-value" type="text" inputmode="decimal" autocomplete="off" value="16"
+                aria-describedby="px-error">
               <span class="unit-converter__unit" aria-hidden="true">px</span>
             </div>
             <p class="unit-converter__error" id="px-error" role="alert"></p>
@@ -56,10 +63,12 @@
           <div class="unit-converter__field unit-converter__field--result">
             <label for="rem-value">REM</label>
             <div class="unit-converter__input">
-              <button class="unit-converter__copy" type="button" data-copy-target="rem-value" aria-label="REM 값 복사" title="복사">
+              <button class="unit-converter__copy" type="button" data-copy-target="rem-value" aria-label="REM 값 복사"
+                title="복사">
                 <span aria-hidden="true">▢</span>
               </button>
-              <input id="rem-value" type="text" inputmode="decimal" autocomplete="off" value="1" aria-describedby="rem-error">
+              <input id="rem-value" type="text" inputmode="decimal" autocomplete="off" value="1"
+                aria-describedby="rem-error">
               <span class="unit-converter__unit" aria-hidden="true">rem</span>
             </div>
             <p class="unit-converter__error" id="rem-error" role="alert"></p>
@@ -71,5 +80,6 @@
     <div data-shared-component="footer"></div>
     <script src="Assets/js/components.js"></script>
     <script src="Assets/js/px-rem.js"></script>
-  </body>
+</body>
+
 </html>

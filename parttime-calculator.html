@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>아르바이트 시급·급여 계산기 - 세상의 모든 계산기</title>
-    <meta name="description" content="근무 일정과 시급, 주휴수당, 야간수당을 입력하여 예상 월급과 실수령액을 간편하게 계산해보세요.">
-    <meta name="keywords" content="아르바이트 시급 계산기, 알바 급여 계산기, 주휴수당 계산기, 야간수당, 시급 계산기, 세상의 모든 계산기">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://ad-site-navy.vercel.app/parttime-calculator.html">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ad-site-navy.vercel.app/parttime-calculator.html">
-    <meta property="og:title" content="아르바이트 시급·급여 계산기 - 세상의 모든 계산기">
-    <meta property="og:description" content="근무 일정과 시급, 주휴수당, 야간수당을 입력하여 예상 월급과 실수령액을 간편하게 계산해보세요.">
-    <meta property="og:site_name" content="세상의 모든 계산기">
-    <meta property="og:locale" content="ko_KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>아르바이트 시급·급여 계산기 - 세상의 모든 계산기</title>
+  <meta name="description" content="근무 일정과 시급, 주휴수당, 야간수당을 입력하여 예상 월급과 실수령액을 간편하게 계산해보세요.">
+  <meta name="keywords" content="아르바이트 시급 계산기, 알바 급여 계산기, 주휴수당 계산기, 야간수당, 시급 계산기, 세상의 모든 계산기">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ad-site-navy.vercel.app/parttime-calculator.html">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="https://ad-site-navy.vercel.app/parttime-calculator.html">
-    <meta name="twitter:title" content="아르바이트 시급·급여 계산기 - 세상의 모든 계산기">
-    <meta name="twitter:description" content="근무 일정과 시급, 주휴수당, 야간수당을 입력하여 예상 월급과 실수령액을 간편하게 계산해보세요.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ad-site-navy.vercel.app/parttime-calculator.html">
+  <meta property="og:title" content="아르바이트 시급·급여 계산기 - 세상의 모든 계산기">
+  <meta property="og:description" content="근무 일정과 시급, 주휴수당, 야간수당을 입력하여 예상 월급과 실수령액을 간편하게 계산해보세요.">
+  <meta property="og:site_name" content="세상의 모든 계산기">
+  <meta property="og:locale" content="ko_KR">
 
-    <link rel="stylesheet" href="Assets/css/normalize.css">
-    <link rel="stylesheet" href="Assets/css/Reset.css">
-    <link rel="stylesheet" href="Assets/css/Commons.css">
-    <link rel="stylesheet" href="Assets/css/style.css">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://ad-site-navy.vercel.app/parttime-calculator.html">
+  <meta name="twitter:title" content="아르바이트 시급·급여 계산기 - 세상의 모든 계산기">
+  <meta name="twitter:description" content="근무 일정과 시급, 주휴수당, 야간수당을 입력하여 예상 월급과 실수령액을 간편하게 계산해보세요.">
 
-    <meta name="google-site-verification" content="J_2k6JVeuW_lqhvMg996a8JIWAD8cWqkynBis4V1Ckc" />
-    <meta name="naver-site-verification" content="25bf50878d3f2e70aefc1e3d2cf69f3e8c91e701" />
-  </head>
-  <body>
-    <div data-shared-component="header"></div>
+  <link rel="stylesheet" href="Assets/css/normalize.css">
+  <link rel="stylesheet" href="Assets/css/Reset.css">
+  <link rel="stylesheet" href="Assets/css/Commons.css">
+  <link rel="stylesheet" href="Assets/css/style.css">
+
+  <meta name="google-site-verification" content="J_2k6JVeuW_lqhvMg996a8JIWAD8cWqkynBis4V1Ckc" />
+  <meta name="naver-site-verification" content="25bf50878d3f2e70aefc1e3d2cf69f3e8c91e701" />
+</head>
+
+<body>
+  <div data-shared-component="header"></div>
+  <div data-shared-component="coupang-banner"></div>
+  <main class="container page-main">
 
     <main class="container page-main">
       <section class="intro" aria-labelledby="page-title">
@@ -55,7 +59,8 @@
             <div class="alba-field">
               <label for="hourly-wage">시급</label>
               <div class="amount-field__control">
-                <input id="hourly-wage" name="hourly-wage" type="text" inputmode="numeric" autocomplete="off" placeholder="예: 12,000" aria-describedby="wage-error" required>
+                <input id="hourly-wage" name="hourly-wage" type="text" inputmode="numeric" autocomplete="off"
+                  placeholder="예: 12,000" aria-describedby="wage-error" required>
                 <span aria-hidden="true">원</span>
               </div>
               <p class="form-error" id="wage-error" role="alert"></p>
@@ -90,7 +95,8 @@
                   <input id="period-start" type="date" required>
                 </div>
               </div>
-              <p class="field-hint" id="period-hint">선택한 근무 요일이 반복된다고 보고, 계산 시작일부터 입력한 횟수만큼 계산합니다. 최대 90회까지 입력할 수 있습니다.</p>
+              <p class="field-hint" id="period-hint">선택한 근무 요일이 반복된다고 보고, 계산 시작일부터 입력한 횟수만큼 계산합니다. 최대 90회까지 입력할 수 있습니다.
+              </p>
               <p class="form-error" id="period-error" role="alert"></p>
             </fieldset>
 
@@ -115,7 +121,8 @@
                 </div>
                 <div class="contract-hours" id="contract-hours-wrap" hidden>
                   <label for="contract-hours">계약상 주 소정근로시간</label>
-                  <div class="compact-input"><input id="contract-hours" type="number" min="0.01" max="168" step="0.01" placeholder="예: 16"><span>시간</span></div>
+                  <div class="compact-input"><input id="contract-hours" type="number" min="0.01" max="168" step="0.01"
+                      placeholder="예: 16"><span>시간</span></div>
                   <p class="form-error" id="contract-hours-error" role="alert"></p>
                 </div>
               </div>
@@ -132,7 +139,8 @@
                 <div class="choice-list">
                   <label><input type="radio" name="employment-maintained" value="yes"><span>예</span></label>
                   <label><input type="radio" name="employment-maintained" value="no"><span>아니요</span></label>
-                  <label><input type="radio" name="employment-maintained" value="unknown" checked><span>확인 필요</span></label>
+                  <label><input type="radio" name="employment-maintained" value="unknown" checked><span>확인
+                      필요</span></label>
                 </div>
               </div>
               <div class="condition-field condition-field--last">
@@ -174,17 +182,50 @@
           <p class="stale-message" id="stale-message" role="status" hidden>입력값이 변경되었습니다. 다시 계산해주세요.</p>
           <div class="alba-results-card" id="alba-results-card">
             <dl class="result-list">
-              <div><dt>적용 시급</dt><dd id="out-wage">—</dd></div>
-              <div><dt>근무 기간</dt><dd id="out-period">—</dd></div>
-              <div><dt>총 근무 횟수</dt><dd id="out-days">—</dd></div>
-              <div><dt>총 실제 근무시간</dt><dd id="out-hours">—</dd></div>
-              <div><dt>총 야간근로시간</dt><dd id="out-night-hours">—</dd></div>
-              <div><dt>기본 급여</dt><dd id="out-base-pay">—</dd></div>
-              <div><dt>야간 가산수당</dt><dd id="out-night-pay">—</dd></div>
-              <div><dt>주휴수당</dt><dd id="out-holiday-pay">—</dd></div>
-              <div><dt>세전 총급여</dt><dd id="out-gross">—</dd></div>
-              <div><dt>공제 방식</dt><dd id="out-deduction-type">—</dd></div>
-              <div><dt>공제액</dt><dd id="out-deduction">—</dd></div>
+              <div>
+                <dt>적용 시급</dt>
+                <dd id="out-wage">—</dd>
+              </div>
+              <div>
+                <dt>근무 기간</dt>
+                <dd id="out-period">—</dd>
+              </div>
+              <div>
+                <dt>총 근무 횟수</dt>
+                <dd id="out-days">—</dd>
+              </div>
+              <div>
+                <dt>총 실제 근무시간</dt>
+                <dd id="out-hours">—</dd>
+              </div>
+              <div>
+                <dt>총 야간근로시간</dt>
+                <dd id="out-night-hours">—</dd>
+              </div>
+              <div>
+                <dt>기본 급여</dt>
+                <dd id="out-base-pay">—</dd>
+              </div>
+              <div>
+                <dt>야간 가산수당</dt>
+                <dd id="out-night-pay">—</dd>
+              </div>
+              <div>
+                <dt>주휴수당</dt>
+                <dd id="out-holiday-pay">—</dd>
+              </div>
+              <div>
+                <dt>세전 총급여</dt>
+                <dd id="out-gross">—</dd>
+              </div>
+              <div>
+                <dt>공제 방식</dt>
+                <dd id="out-deduction-type">—</dd>
+              </div>
+              <div>
+                <dt>공제액</dt>
+                <dd id="out-deduction">—</dd>
+              </div>
             </dl>
             <div class="take-home alba-take-home">
               <span>예상 실수령액</span>
@@ -213,5 +254,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="Assets/js/components.js"></script>
     <script src="Assets/js/main.js"></script>
-  </body>
+</body>
+
 </html>

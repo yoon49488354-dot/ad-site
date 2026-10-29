@@ -197,7 +197,7 @@
 }
 
 .salary-types legend,
-.amount-field > label {
+.amount-field>label {
   display: block;
   margin-bottom: 11px;
   color: #344563;
@@ -236,13 +236,13 @@
   transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease;
 }
 
-.salary-type input:checked + span {
+.salary-type input:checked+span {
   border-color: var(--color-primary);
   color: var(--color-primary);
   background: #f1f4ff;
 }
 
-.salary-type input:focus-visible + span {
+.salary-type input:focus-visible+span {
   outline: 3px solid rgba(49, 92, 245, 0.32);
   outline-offset: 2px;
 }
@@ -284,7 +284,7 @@
   font-weight: 400;
 }
 
-.amount-field__control > span {
+.amount-field__control>span {
   color: #75829a;
   font-size: 14px;
 }
@@ -727,13 +727,13 @@
   font-weight: 600;
 }
 
-.salary-calc-modes input:checked + span {
+.salary-calc-modes input:checked+span {
   border-color: var(--color-primary);
   color: var(--color-primary);
   background: #f1f4ff;
 }
 
-.salary-calc-modes input:focus-visible + span {
+.salary-calc-modes input:focus-visible+span {
   outline: 3px solid rgba(49, 92, 245, 0.32);
   outline-offset: 2px;
 }
@@ -765,7 +765,7 @@
   font-weight: 650;
 }
 
-.salary-result-card > strong {
+.salary-result-card>strong {
   margin-top: 8px;
   color: var(--color-primary);
   font-size: clamp(28px, 4vw, 38px);
@@ -844,8 +844,8 @@
   gap: 23px;
 }
 
-.alba-field > label,
-.alba-field > legend,
+.alba-field>label,
+.alba-field>legend,
 .alba-field legend {
   display: block;
   margin-bottom: 10px;
@@ -930,8 +930,8 @@
   grid-template-columns: minmax(0, 1fr);
 }
 
-.date-range > div > label,
-.contract-hours > label {
+.date-range>div>label,
+.contract-hours>label {
   display: block;
   margin-bottom: 6px;
   color: #65738b;
@@ -951,7 +951,7 @@
   font-size: 13px;
 }
 
-.date-range + .field-hint {
+.date-range+.field-hint {
   margin-top: 8px;
 }
 
@@ -985,13 +985,13 @@
   font-weight: 650;
 }
 
-.weekday-choice input:checked + span {
+.weekday-choice input:checked+span {
   border-color: var(--color-primary);
   color: #fff;
   background: var(--color-primary);
 }
 
-.weekday-choice input:focus-visible + span {
+.weekday-choice input:focus-visible+span {
   outline: 3px solid rgba(49, 92, 245, 0.32);
   outline-offset: 2px;
 }
@@ -1066,7 +1066,7 @@
   border-bottom: 1px solid #edf0f5;
 }
 
-.condition-field > span {
+.condition-field>span {
   color: #53627c;
   font-size: 12px;
   font-weight: 600;
@@ -1122,7 +1122,7 @@
   gap: 0;
 }
 
-.result-list > div {
+.result-list>div {
   min-height: 35px;
   display: flex;
   align-items: center;
@@ -1202,7 +1202,7 @@
   gap: 8px;
 }
 
-.daily-breakdown__content > p {
+.daily-breakdown__content>p {
   color: #8995a8;
   font-size: 12px;
 }
@@ -1466,6 +1466,7 @@
     opacity: 0;
     transform: translate(-50%, -6px);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, 0);
@@ -1558,7 +1559,7 @@
   font-weight: 700;
 }
 
-.directory-card__content > span {
+.directory-card__content>span {
   color: #8995a8;
   font-size: 13px;
   line-height: 1.5;
@@ -1588,8 +1589,8 @@
   min-width: 0;
 }
 
-.retirement-field > label,
-.retirement-field > legend {
+.retirement-field>label,
+.retirement-field>legend {
   display: block;
   margin-bottom: 8px;
   color: #344563;
@@ -1597,7 +1598,7 @@
   font-weight: 700;
 }
 
-.retirement-field > input,
+.retirement-field>input,
 .retirement-input-with-unit {
   width: 100%;
   min-height: 45px;
@@ -1606,7 +1607,7 @@
   background: #fff;
 }
 
-.retirement-field > input {
+.retirement-field>input {
   padding: 0 11px;
   color: #344563;
   font-size: 14px;
@@ -1620,7 +1621,7 @@
 }
 
 .retirement-input-with-unit:focus-within,
-.retirement-field > input:focus {
+.retirement-field>input:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(49, 92, 245, 0.1);
 }
@@ -1635,7 +1636,7 @@
   font-size: 14px;
 }
 
-.retirement-input-with-unit > span {
+.retirement-input-with-unit>span {
   flex: 0 0 auto;
   color: #75829a;
   font-size: 12px;
@@ -1651,15 +1652,15 @@
   gap: 10px;
 }
 
-.retirement-wages > legend {
+.retirement-wages>legend {
   margin-bottom: 0;
 }
 
-.retirement-wages > .field-hint {
+.retirement-wages>.field-hint {
   margin-top: -7px;
 }
 
-.retirement-wages > label {
+.retirement-wages>label {
   display: grid;
   gap: 5px;
   color: #65738b;
@@ -1667,11 +1668,11 @@
   font-weight: 600;
 }
 
-.retirement-wages > label .retirement-input-with-unit {
+.retirement-wages>label .retirement-input-with-unit {
   min-height: 41px;
 }
 
-.retirement-wages > label .retirement-input-with-unit input {
+.retirement-wages>label .retirement-input-with-unit input {
   height: 39px;
 }
 
@@ -1691,13 +1692,13 @@
   opacity: 0.62;
 }
 
-.retirement-result-card > p {
+.retirement-result-card>p {
   color: #75829a;
   font-size: 13px;
   font-weight: 650;
 }
 
-.retirement-result-card > strong {
+.retirement-result-card>strong {
   display: block;
   margin: 5px 0 21px;
   color: var(--color-primary);
@@ -1713,7 +1714,7 @@
   margin: 0;
 }
 
-.retirement-result-card dl > div {
+.retirement-result-card dl>div {
   min-height: 39px;
   display: flex;
   align-items: center;
@@ -1798,7 +1799,7 @@
     font-size: 14px;
   }
 
-  .directory-card__content > span {
+  .directory-card__content>span {
     font-size: 11px;
   }
 
@@ -1958,6 +1959,7 @@
 }
 
 @media (max-width: 760px) {
+
   .percentage-calculator__heading,
   .percentage-rows {
     padding-right: 20px;
@@ -2085,7 +2087,7 @@
   margin-top: 18px;
 }
 
-.dutchpay-field > label {
+.dutchpay-field>label {
   display: block;
   margin-bottom: 9px;
   color: #344563;
@@ -2094,7 +2096,7 @@
 }
 
 .dutchpay-field .form-error,
-.dutchpay-card > .form-error {
+.dutchpay-card>.form-error {
   min-height: 18px;
 }
 
@@ -2472,7 +2474,7 @@
   gap: 7px;
 }
 
-.unit-converter__field > label {
+.unit-converter__field>label {
   color: #273956;
   font-size: 20px;
   font-weight: 600;
@@ -2630,7 +2632,7 @@
     gap: 10px;
   }
 
-  .unit-converter__field > label {
+  .unit-converter__field>label {
     font-size: 17px;
   }
 
@@ -2929,6 +2931,7 @@
 }
 
 @media (max-width: 480px) {
+
   .unit-conversion-card,
   .unit-reference-card {
     padding: 22px 17px;
@@ -2964,6 +2967,7 @@
     font-size: 13px;
   }
 }
+
 .discount-input-group {
   display: flex;
   flex-direction: column;
@@ -3047,4 +3051,80 @@
   .discount-result-total strong {
     font-size: 23px;
   }
+}
+
+
+/* =====================================================
+   쿠팡 파트너스 배너 (index.html)
+   ===================================================== */
+
+/* =====================================================
+   Coupang Partners Banner
+   ===================================================== */
+
+/* =====================================================
+   Coupang Partners Banner (shared component)
+   ===================================================== */
+
+/* outer wrapper */
+.coupang-banner-wrap {
+  width: 100%;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0 4px;
+}
+
+/* iframe base */
+.coupang-iframe {
+  border: 0;
+  display: block;
+  overflow: hidden;
+}
+
+/* PC iframe: visible on desktop */
+.coupang-iframe--pc {
+  width: 680px;
+  height: 140px;
+}
+
+/* MO iframe: hidden on desktop, visible on mobile */
+.coupang-iframe--mo {
+  width: 280px;
+  height: 140px;
+  display: none;
+}
+
+/* marquee notice */
+.coupang-marquee-wrap {
+  overflow: hidden;
+  width: 100%;
+  padding: 6px 0 8px;
+}
+
+.coupang-marquee {
+  display: flex;
+  white-space: nowrap;
+  margin: 0;
+  animation: coupang-scroll 20s linear infinite;
+}
+
+.coupang-marquee span {
+  display: inline-block;
+  font-size: 10px;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+@keyframes coupang-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* mobile (680px and below) */
+@media (max-width: 680px) {
+  .coupang-iframe--pc { display: none; }
+  .coupang-iframe--mo { display: block; }
 }

@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>퇴직금 계산기 - 세상의 모든 계산기</title>
-    <meta name="description" content="입사일, 퇴사일(근속기간)과 퇴직 전 3개월 임금 정보를 바탕으로 예상 퇴직금을 간편하게 계산해보세요.">
-    <meta name="keywords" content="퇴직금 계산기, 퇴직금 계산 방법, 근속일수 계산, 평균임금 계산, 퇴직금 모의계산, 예상 퇴직금, 세상의 모든 계산기">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://ad-site-navy.vercel.app/retirement-calculator.html">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ad-site-navy.vercel.app/retirement-calculator.html">
-    <meta property="og:title" content="퇴직금 계산기 - 세상의 모든 계산기">
-    <meta property="og:description" content="입사일, 퇴사일(근속기간)과 퇴직 전 3개월 임금 정보를 바탕으로 예상 퇴직금을 간편하게 계산해보세요.">
-    <meta property="og:site_name" content="세상의 모든 계산기">
-    <meta property="og:locale" content="ko_KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>퇴직금 계산기 - 세상의 모든 계산기</title>
+  <meta name="description" content="입사일, 퇴사일(근속기간)과 퇴직 전 3개월 임금 정보를 바탕으로 예상 퇴직금을 간편하게 계산해보세요.">
+  <meta name="keywords" content="퇴직금 계산기, 퇴직금 계산 방법, 근속일수 계산, 평균임금 계산, 퇴직금 모의계산, 예상 퇴직금, 세상의 모든 계산기">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ad-site-navy.vercel.app/retirement-calculator.html">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="https://ad-site-navy.vercel.app/retirement-calculator.html">
-    <meta name="twitter:title" content="퇴직금 계산기 - 세상의 모든 계산기">
-    <meta name="twitter:description" content="입사일, 퇴사일(근속기간)과 퇴직 전 3개월 임금 정보를 바탕으로 예상 퇴직금을 간편하게 계산해보세요.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ad-site-navy.vercel.app/retirement-calculator.html">
+  <meta property="og:title" content="퇴직금 계산기 - 세상의 모든 계산기">
+  <meta property="og:description" content="입사일, 퇴사일(근속기간)과 퇴직 전 3개월 임금 정보를 바탕으로 예상 퇴직금을 간편하게 계산해보세요.">
+  <meta property="og:site_name" content="세상의 모든 계산기">
+  <meta property="og:locale" content="ko_KR">
 
-    <link rel="stylesheet" href="Assets/css/normalize.css">
-    <link rel="stylesheet" href="Assets/css/Reset.css">
-    <link rel="stylesheet" href="Assets/css/Commons.css">
-    <link rel="stylesheet" href="Assets/css/style.css">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://ad-site-navy.vercel.app/retirement-calculator.html">
+  <meta name="twitter:title" content="퇴직금 계산기 - 세상의 모든 계산기">
+  <meta name="twitter:description" content="입사일, 퇴사일(근속기간)과 퇴직 전 3개월 임금 정보를 바탕으로 예상 퇴직금을 간편하게 계산해보세요.">
 
-    <meta name="google-site-verification" content="J_2k6JVeuW_lqhvMg996a8JIWAD8cWqkynBis4V1Ckc" />
-    <meta name="naver-site-verification" content="25bf50878d3f2e70aefc1e3d2cf69f3e8c91e701" />
-  </head>
-  <body>
-    <div data-shared-component="header"></div>
+  <link rel="stylesheet" href="Assets/css/normalize.css">
+  <link rel="stylesheet" href="Assets/css/Reset.css">
+  <link rel="stylesheet" href="Assets/css/Commons.css">
+  <link rel="stylesheet" href="Assets/css/style.css">
+
+  <meta name="google-site-verification" content="J_2k6JVeuW_lqhvMg996a8JIWAD8cWqkynBis4V1Ckc" />
+  <meta name="naver-site-verification" content="25bf50878d3f2e70aefc1e3d2cf69f3e8c91e701" />
+</head>
+
+<body>
+  <div data-shared-component="header"></div>
+  <div data-shared-component="coupang-banner"></div> ← 이미 삽입됨
+  <main class="container page-main">
     <main class="container page-main">
       <section class="intro" aria-labelledby="page-title">
         <span class="eyebrow">RETIREMENT PAY CALCULATOR</span>
@@ -75,15 +79,18 @@
             <p class="field-hint">아래 각 기간에 해당하는 세전 임금 합계를 입력해주세요.</p>
             <label>
               <span id="wage-period-1-label">첫 번째 기간</span>
-              <span class="retirement-input-with-unit"><input class="three-month-wage" id="three-month-wage-1" type="text" inputmode="numeric" value="0"><span>원</span></span>
+              <span class="retirement-input-with-unit"><input class="three-month-wage" id="three-month-wage-1"
+                  type="text" inputmode="numeric" value="0"><span>원</span></span>
             </label>
             <label>
               <span id="wage-period-2-label">두 번째 기간</span>
-              <span class="retirement-input-with-unit"><input class="three-month-wage" id="three-month-wage-2" type="text" inputmode="numeric" value="0"><span>원</span></span>
+              <span class="retirement-input-with-unit"><input class="three-month-wage" id="three-month-wage-2"
+                  type="text" inputmode="numeric" value="0"><span>원</span></span>
             </label>
             <label>
               <span id="wage-period-3-label">세 번째 기간</span>
-              <span class="retirement-input-with-unit"><input class="three-month-wage" id="three-month-wage-3" type="text" inputmode="numeric" value="0"><span>원</span></span>
+              <span class="retirement-input-with-unit"><input class="three-month-wage" id="three-month-wage-3"
+                  type="text" inputmode="numeric" value="0"><span>원</span></span>
             </label>
             <p class="form-error" id="three-month-wage-error" role="alert"></p>
           </fieldset>
@@ -107,10 +114,12 @@
             <p class="form-error" id="annual-leave-error" role="alert"></p>
           </div>
 
-          <button class="button button--primary calculate-button" type="submit">퇴직금 계산하기 <span aria-hidden="true">→</span></button>
+          <button class="button button--primary calculate-button" type="submit">퇴직금 계산하기 <span
+              aria-hidden="true">→</span></button>
         </form>
 
-        <section class="calculator__result retirement-result" aria-labelledby="retirement-result-title" aria-live="polite">
+        <section class="calculator__result retirement-result" aria-labelledby="retirement-result-title"
+          aria-live="polite">
           <div class="section-heading section-heading--result">
             <span class="section-heading__number">02</span>
             <div>
@@ -122,16 +131,32 @@
             <p>예상 퇴직금 (세전)</p>
             <strong id="retirement-amount">—</strong>
             <dl>
-              <div><dt>근속기간</dt><dd id="retirement-service">—</dd></div>
-              <div><dt>평균임금 산정기간</dt><dd id="retirement-average-period">—</dd></div>
-              <div><dt>산정 대상 임금 합계</dt><dd id="retirement-wage-total">—</dd></div>
-              <div><dt>1일 평균임금</dt><dd id="retirement-daily-average">—</dd></div>
-              <div><dt>퇴직급여 대상 여부</dt><dd id="retirement-eligibility">—</dd></div>
+              <div>
+                <dt>근속기간</dt>
+                <dd id="retirement-service">—</dd>
+              </div>
+              <div>
+                <dt>평균임금 산정기간</dt>
+                <dd id="retirement-average-period">—</dd>
+              </div>
+              <div>
+                <dt>산정 대상 임금 합계</dt>
+                <dd id="retirement-wage-total">—</dd>
+              </div>
+              <div>
+                <dt>1일 평균임금</dt>
+                <dd id="retirement-daily-average">—</dd>
+              </div>
+              <div>
+                <dt>퇴직급여 대상 여부</dt>
+                <dd id="retirement-eligibility">—</dd>
+              </div>
             </dl>
           </div>
           <div class="result-notices" id="retirement-notices"></div>
           <p class="calculation-note retirement-disclaimer">
-            예상 퇴직금 = 1일 평균임금 × 30일 × 계속근로일수 ÷ 365일. 평균임금이 통상임금보다 낮은 경우 통상임금 기준 비교가 필요합니다. 세금, 휴직·수습기간 등 개별 사정은 자동 반영하지 않으므로 실제 금액은 달라질 수 있습니다.
+            예상 퇴직금 = 1일 평균임금 × 30일 × 계속근로일수 ÷ 365일. 평균임금이 통상임금보다 낮은 경우 통상임금 기준 비교가 필요합니다. 세금, 휴직·수습기간 등 개별 사정은 자동 반영하지
+            않으므로 실제 금액은 달라질 수 있습니다.
           </p>
         </section>
       </section>
@@ -140,5 +165,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="Assets/js/components.js"></script>
     <script src="Assets/js/main.js"></script>
-  </body>
+</body>
+
 </html>
