@@ -14,10 +14,11 @@
   const isVolumePage = path.endsWith("volume-calculator.html");
   const isSpeedPage = path.endsWith("speed-calculator.html");
   const isDataSizePage = path.endsWith("data-size-calculator.html");
+  const isMemoryGamePage = path.endsWith("memory-game.html");
 
   const isSubPage = isSalaryPage || isParttimePage || isRetirementPage ||
     isAreaPage || isDiscountPage || isPercentagePage || isDutchpayPage ||
-    isPxRemPage || isUnitPage || isVolumePage || isSpeedPage || isDataSizePage;
+    isPxRemPage || isUnitPage || isVolumePage || isSpeedPage || isDataSizePage || isMemoryGamePage;
   const isHomePage = !isSubPage || path.endsWith("index.html") || path.endsWith("/");
 
   // 카테고리 활성 그룹 확인
@@ -44,6 +45,9 @@
               <!-- 홈 메뉴 -->
               <li class="site-nav__item">
                 <a href="index.html" class="site-nav__link${isHomePage ? ' is-current' : ''}">홈</a>
+              </li>
+              <li class="site-nav__item">
+                <a href="memory-game.html" class="site-nav__link${isMemoryGamePage ? ' is-current' : ''}">게임</a>
               </li>
 
               <!-- 1. 계산도구 -->
@@ -179,6 +183,7 @@
                 <ul class="site-footer__links">
                   <li><a href="px-rem-calculator.html">PX·REM</a></li>
                   <li><a href="unit-converter.html">단위 변환</a></li>
+                  <li><a href="memory-game.html">카드 짝맞추기</a></li>
                 </ul>
               </div>
               <div class="site-footer__col">

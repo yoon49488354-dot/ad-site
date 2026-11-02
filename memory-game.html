@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>카드 짝맞추기 게임 - 세상의 모든 계산기</title>
+  <meta name="description" content="같은 그림의 카드를 찾아 짝을 맞추는 무료 메모리 게임입니다. 제한 시간 안에 모든 카드 짝을 맞춰보세요.">
+  <link rel="stylesheet" href="Assets/css/normalize.css">
+  <link rel="stylesheet" href="Assets/css/Reset.css">
+  <link rel="stylesheet" href="Assets/css/Commons.css">
+  <link rel="stylesheet" href="Assets/css/style.css">
+</head>
+<body class="memory-game-page">
+  <div data-shared-component="header"></div>
+  <div data-shared-component="coupang-banner"></div>
+
+  <main class="container page-main memory-game-main">
+    <section class="intro memory-game-intro" aria-labelledby="page-title">
+      <span class="eyebrow">MEMORY GAME</span>
+      <h1 id="page-title"><span>카드 짝맞추기</span></h1>
+      <p>카드를 뒤집어 같은 그림 8쌍을 찾아보세요.</p>
+    </section>
+
+    <section class="memory-game" aria-label="카드 짝맞추기 게임">
+      <div class="memory-game__status">
+        <div class="memory-game__stat">
+          <span>남은 시간</span>
+          <strong><span id="memory-time">90</span>초</strong>
+        </div>
+        <div class="memory-game__stat">
+          <span>뒤집기</span>
+          <strong><span id="memory-flips">0</span>회</strong>
+        </div>
+        <div class="memory-game__stat memory-game__stat--pairs">
+          <span>완성</span>
+          <strong><span id="memory-pairs">0</span>/8</strong>
+        </div>
+        <button type="button" class="memory-game__restart" id="memory-restart">
+          다시 섞기
+        </button>
+      </div>
+
+      <div class="memory-game__board-wrap">
+        <div class="memory-game__board" id="memory-board" role="grid" aria-label="카드 게임판"></div>
+        <div class="memory-game__overlay is-visible" id="memory-overlay" role="dialog" aria-modal="true">
+          <strong id="memory-overlay-title">게임 시작</strong>
+          <span id="memory-overlay-message">카드를 눌러 짝맞추기를 시작하세요.</span>
+          <button type="button" id="memory-overlay-button">시작하기</button>
+        </div>
+      </div>
+
+      <p class="memory-game__reference">Web Dev Simplified의 카드 매칭 게임 구상에서 영감을 받아 새롭게 제작되었습니다.</p>
+    </section>
+  </main>
+
+  <div data-shared-component="footer"></div>
+  <script src="Assets/js/components.js"></script>
+  <script src="Assets/js/memory-game.js"></script>
+
+  <!-- Naver Analytics -->
+  <script type="text/javascript" src="//wcs.pstatic.net/wcslog.js"></script>
+  <script type="text/javascript">
+  if(!wcs_add) var wcs_add = {};
+  wcs_add["wa"] = "1bb89dc29ed61b0";
+  if(window.wcs) {
+    wcs_do();
+  }
+  </script>
+</body>
+</html>
